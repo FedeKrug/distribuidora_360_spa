@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 export const Navbar = () => {
     return (
@@ -6,9 +7,9 @@ export const Navbar = () => {
             <nav className="navbar navbar-dark navbar-expand p-0 bg-dark">
                 <div className="container-fluid">
                     <ul className="navbar-nav d-none d-md-flex mr-auto">
-                        <li className="nav-item"><a className="nav-link" href="#" data-abc="true">Cash On Delivery</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#" data-abc="true">Free Delivery</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#" data-abc="true">Cash Backs</a></li>
+                        <li className="nav-item"><Link className="nav-link" to="/" data-abc="true">Distribuidora 360</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/contacto" data-abc="true">Contacto</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/preguntas-frecuentes" data-abc="true">Preguntas Frecuentes</Link></li>
                     </ul>
                     <ul className="navbar-nav d-flex align-items-center">
                         <li className="nav-item">
@@ -17,7 +18,9 @@ export const Navbar = () => {
                             </div>
                         </li>
                         <li className="nav-item">
-                            <a href="#" className="nav-link d-flex align-items-center" data-abc="true"><span>Nantano M</span><i className='bx bxs-chevron-down'></i></a>
+                            <a href="#" className="nav-link d-flex align-items-center" data-abc="true"><span>UserName</span>
+                                <i className='bx bxs-chevron-down'></i>
+                            </a>
                         </li>
 
                     </ul>
@@ -27,9 +30,9 @@ export const Navbar = () => {
             <section className="header-main border-bottom bg-white">
                 <div className="container-fluid">
                     <div className="row p-2 pt-3 pb-3 d-flex align-items-center">
-                        <div className="col-md-2">
+                        <Link className="col-md-2" to='/'>
                             <img className="d-none d-md-flex" src="../../public/images/Cartera.jpg" width="100" />
-                        </div>
+                        </Link>
                         <div className="col-md-8">
                             <div className="d-flex form-inputs">
                                 <input className="form-control rounded-pill" type="text" placeholder="Search any product..." />
