@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const Navbar = () => {
     return (
@@ -29,7 +28,7 @@ export const Navbar = () => {
                 <div className="container-fluid">
                     <div className="row p-2 pt-3 pb-3 d-flex align-items-center">
                         <div className="col-md-2">
-                            <img className="d-none d-md-flex" src="https://i.imgur.com/R8QhGhk.png" width="100" />
+                            <img className="d-none d-md-flex" src="../../public/images/Cartera.jpg" width="100" />
                         </div>
                         <div className="col-md-8">
                             <div className="d-flex form-inputs">

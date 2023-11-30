@@ -1,13 +1,18 @@
-import React from 'react'
 import { Navbar } from './components/Navbar'
-import { Navbar2 } from './components/Navbar2'
 import { Slider } from './components/Slider'
+import { ProductsList } from './components/ProductsList'
+import { WhatsappFloatingButton } from './components/WhatsappFloatingButton'
+import { AppRouter } from './router/AppRouter'
+import { BrowserRouter } from 'react-router-dom'
 
 const App = () => {
   return (<>
-    <Navbar />
-    {/* <Navbar2 /> */}
-    <Slider />
+    <BrowserRouter>
+      <Navbar />
+      {/* <Navbar2 /> */}
+      <AppRouter />
+      <WhatsappFloatingButton />
+    </BrowserRouter>
   </>
   )
 }

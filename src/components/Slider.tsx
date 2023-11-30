@@ -1,4 +1,3 @@
-import React from 'react'
 
 import '../slider.css';
 export const Slider = () => {
@@ -7,7 +6,7 @@ export const Slider = () => {
 
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="../../public/images/Colgante.jpg" className="d-block w-100" alt="..." />
+                    <img src="../../public/images/Preview-banner.jpg" className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
                         <div className="custom-carousel-content">
                             <h1>
@@ -27,7 +26,7 @@ export const Slider = () => {
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src='../../public/images/Vasija3.jpg' className="d-block w-100" alt="..." />
+                    <img src='../../public/images/Preview-banner.jpg' className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
                         <div className="custom-carousel-content">
                             <h1>
@@ -47,7 +46,7 @@ export const Slider = () => {
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src="../../public/images/Vasija3.jpg" className="d-block w-100" alt="..." />
+                    <img src="../../public/images/Preview-banner.jpg" className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
                         <div className="custom-carousel-content">
                             <h1>
