@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { AvatarDropdown } from "./AvatarDropdown"
 
 export const Navbar = () => {
     return (
@@ -13,16 +14,8 @@ export const Navbar = () => {
                     </ul>
                     <ul className="navbar-nav d-flex align-items-center">
                         <li className="nav-item">
-                            <div className="d-flex flex-row">
-                                <img src="https://i.imgur.com/EYFtR83.jpg" className="rounded-circle" width="30" />
-                            </div>
+                            <AvatarDropdown />
                         </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link d-flex align-items-center" data-abc="true"><span>UserName</span>
-                                <i className='bx bxs-chevron-down'></i>
-                            </a>
-                        </li>
-
                     </ul>
                 </div>
             </nav>
