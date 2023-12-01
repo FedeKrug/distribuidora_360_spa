@@ -1,3 +1,4 @@
+import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { WhatsappFloatingButton } from './components/WhatsappFloatingButton'
 import { AppRouter } from './router/AppRouter'
@@ -10,6 +11,7 @@ const App = () => {
       {/* <Navbar2 /> */}
       <AppRouter />
       <WhatsappFloatingButton />
+      <Footer />
     </BrowserRouter>
   </>
   )

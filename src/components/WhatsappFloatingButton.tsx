@@ -1,4 +1,4 @@
-import '../whatsappBTN.css'
+import '../styles/whatsappBTN.css'
 
 const baseLink = "https://api.whatsapp.com/send?phone=";
 const phoneNumber = '1123865697';

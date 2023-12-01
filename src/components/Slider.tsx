@@ -1,5 +1,5 @@
 
-import '../slider.css';
+import '../styles/slider.css';
 export const Slider = () => {
     return (
         <div id="carouselExampleCaptions" className="carousel slide " data-bs-ride="false">

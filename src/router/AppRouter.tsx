@@ -3,6 +3,7 @@ import { HomeScreen } from '../pages/HomeScreen'
 import { Error404Page } from '../pages/Error404Page'
 import { ContactPage } from '../pages/ContactPage'
 import { FAQScreen } from '../pages/FAQScreen'
+import { ProductPage } from '../pages/ProductPage'
 
 
 
@@ -12,6 +13,7 @@ export const AppRouter = () => {
             <Route path='/' element={<HomeScreen />} />
             <Route path='/contacto' element={<ContactPage />} />
             <Route path='/preguntas-frecuentes' element={<FAQScreen />} />
+            <Route path='/producto' element={<ProductPage />} />
 
 
 
