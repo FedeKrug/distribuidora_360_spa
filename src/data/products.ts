@@ -1,86 +1,93 @@
 import { Id } from "../../convex/_generated/dataModel";
 
 export type ProductsType = {
-    _id: Id<"sampleProducts">;
-    _creationTime: number;
+    _id?: Id<"sampleProducts">;
+    _creationTime?: number;
     imageId: string;
     price: number;
     title: string;
 }
 
-// export const products: ProductsType[] = [
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 0,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 1,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 2,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 3,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 4,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 5,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 6,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 7,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 8,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 9,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 10,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
-//     {
-//         name: 'Producto de prueba 1',
-//         price: 34,
-//         id: 11,
-//         imgURL: '../../public/images/Vasija2.jpg'
-//     },
+export type ProductosType = {
+    title: string;
+    price: number;
+    id: number;
+    imageId: string;
+}
+
+export const products: ProductosType[] = [
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 0,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 1,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 2,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 3,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 4,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 5,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 6,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 7,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 8,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 9,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 10,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
+    {
+        title: 'Producto de prueba 1',
+        price: 34,
+        id: 11,
+        imageId: '../../public/images/Vasija2.jpg'
+    },
 
 
-// ]
+]
