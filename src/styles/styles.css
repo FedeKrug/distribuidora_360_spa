@@ -1,8 +1,10 @@
 [data-theme="light"] {
     --primary: #186936;
-    --background: #809060;
-    --text: #181;
+    --background: #bf4021;
+    --text: #588;
     --titles: #196380;
+    --footer: #095803;
+    --header: #ae5360;
 }
 
 [data-theme="dark"] {
@@ -10,12 +12,18 @@
     --background: #0c221c;
     --text: #fff;
     --titles: #ae0;
+    --footer: #ee3360;
+    --header: #8095;
 }
 
 body {
     color: var(--text);
     background-color: var(--background);
     font-family: 'Roboto';
+}
+
+.primary {
+    background-color: var(--primary);
 }
 
 .product {
@@ -26,9 +34,13 @@ body {
 
 footer {
     color: var(--text);
-    background-color: var(--background);
+
 }
 
 .title {
     color: var(--titles);
+}
+
+.categories {
+    background-color: #484198;
 }

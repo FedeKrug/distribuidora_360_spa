@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom"
 import { AvatarDropdown } from "./AvatarDropdown"
+import { FaShoppingCart } from "react-icons/fa";
 import SwitchDarkMode from "./SwitchToDarkMode"
 import '../styles/styles.css'
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 export const Navbar = () => {
+
+    const { isDark } = useContext(ThemeContext);
     return (
         <header className="section-header">
 
@@ -23,26 +28,28 @@ export const Navbar = () => {
                 </div>
             </nav>
 
-            <section className="header-main border-bottom bg-white">
+            <section className="header-main border-bottom primary">
                 <div className="container-fluid">
                     <div className="row p-2 pt-3 pb-3 d-flex align-items-center">
                         <Link className="col-md-2" to='/'>
-                            <img className="d-none d-md-flex" src="../../public/images/Cartera.jpg" width="100" />
+                            <img className="d-none d-md-flex" src={`${(isDark) ? '../../public/images/Logo3.png' : '../../public/images/Logo4.png'}`} width="100" />
                         </Link>
                         <div className="col-md-8">
                             <div className="d-flex form-inputs">
                                 <input className="form-control rounded-pill" type="text" placeholder="Search any product..." />
-                                <i className="bx bx-search"></i>
                             </div>
                         </div>
 
                         <div className="col-md-2">
-                            <div className="d-flex d-none d-md-flex flex-row align-items-center">
-                                <span className="shop-bag"><i className='bx bxs-shopping-bag'></i></span>
-                                <div className="d-flex flex-column ms-2">
-                                    <span className="qty">1 Product</span>
+                            <div className="d-flex d-md-flex flex-row align-items-center">
+                                <span className="shop-bag">
+                                    <FaShoppingCart />
+                                    1
+
+                                </span>
+                                {/* <div className="d-flex flex-column ms-2">
                                     <span className="fw-bold">$27.90</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -51,7 +58,7 @@ export const Navbar = () => {
 
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand d-md-none d-md-flex" href="#">Categories</a>
+                    <a className="navbar-brand d-md-none d-md-flex fw-bold" href="#">Categories</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -65,9 +72,13 @@ export const Navbar = () => {
                                     <li><a className="dropdown-item" href="#">Herramientas</a></li>
                                     <li><a className="dropdown-item" href="#">Maquinarias</a></li>
                                     <li><a className="dropdown-item" href="#">Limpieza</a></li>
+                                    <li><a className="dropdown-item" href="#">Electrónica</a></li>
+                                    <li><a className="dropdown-item" href="#">Electricidad</a></li>
+                                    <li><a className="dropdown-item" href="#">Plomería</a></li>
+                                    <li><a className="dropdown-item" href="#">Albañilería</a></li>
                                 </ul>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link active" aria-current="page" href="#">Electronics</a>
                             </li>
                             <li className="nav-item">
@@ -75,7 +86,7 @@ export const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Furnitures</a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
