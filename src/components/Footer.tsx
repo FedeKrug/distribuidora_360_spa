@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import '../styles/footer.css'
-import { FaInstagram, FaGoogle, FaFacebook, FaTiktok } from 'react-icons/fa'
+// import { FaInstagram, FaGoogle, FaFacebook, FaTiktok } from 'react-icons/fa'
+import { email, phoneNumber } from '../data/constants';
 
-const email = 'krug.federico2554@gmail.com';
 
 export const Footer = () => {
     return (
@@ -42,13 +42,13 @@ export const Footer = () => {
                         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                             <h6 className="text-uppercase mb-4 font-weight-bold ">Contacto</h6>
                             <ul className=' list-unstyled text-lg-start '>
-                                <li >Direccion del local</li>
-                                <li><a className='text-decoration-none text-white' target='_blank' href={`mailto:${email}`}>{email}</a></li>
-                                <li><Link className='text-decoration-none text-white' to="">+ 54 9 112384963</Link></li>
+                                {/* <li >Direccion del local</li> */}
+                                <li>Email: <a className='text-decoration-none text-white' target='_blank' href={`mailto:${email}`}>{email}</a></li>
+                                <li>Número de Contacto: <Link className='text-decoration-none text-white' to="">{phoneNumber}</Link></li>
                             </ul>
                         </div>
 
-                        <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        {/* <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                             <h6 className="text-uppercase mb-4 font-weight-bold">Seguinos en nuestras redes</h6>
                             <div>
 
@@ -104,15 +104,13 @@ export const Footer = () => {
                                     <FaInstagram />
                                 </div>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
             </div>
 
             <div className="text-center p-3">
-                © 2023 Copyright:
-                <a className="text-white" href="https://mdbootstrap.com/"
-                > Kubbo</a>
+                © 2023 Copyright: <a className="text-white" href="https://kuboo.io/" target='_blank'>Kuboo</a>
             </div>
         </footer>
 

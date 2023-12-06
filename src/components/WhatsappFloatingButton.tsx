@@ -1,7 +1,8 @@
+import { phoneNumber } from '../data/constants';
 import '../styles/whatsappBTN.css'
 
 const baseLink = "https://api.whatsapp.com/send?phone=";
-const phoneNumber = '1123865697';
+
 const customMessage = "Hola, me gustaria saber mas acerca de...";
 const customLink = baseLink + phoneNumber + '&text=' + customMessage;
 

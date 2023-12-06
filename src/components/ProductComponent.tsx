@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { ProductsType } from '../data/products'
-
+import '../styles/styles.css'
 
 
 export const ProductComponent = ({ title, imageId, price }: ProductsType) => {
     return (
-        <Link className="card m-2 text-decoration-none "
+        <Link className="card m-2 text-decoration-none product"
             to='/producto'
             style={{ width: '18rem' }}
         >

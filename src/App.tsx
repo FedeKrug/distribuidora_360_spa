@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar'
 import { WhatsappFloatingButton } from './components/WhatsappFloatingButton'
 import { AppRouter } from './router/AppRouter'
 import { BrowserRouter } from 'react-router-dom'
+import './styles/styles.css'
 
 const App = () => {
 
