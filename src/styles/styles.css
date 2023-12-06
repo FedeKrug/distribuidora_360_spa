@@ -2,12 +2,14 @@
     --primary: #186936;
     --background: #809060;
     --text: #181;
+    --titles: #196380;
 }
 
 [data-theme="dark"] {
     --primary: #e86936;
     --background: #0c221c;
     --text: #fff;
+    --titles: #ae0;
 }
 
 body {
@@ -20,4 +22,13 @@ body {
     color: var(--text);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: var(--background);
+}
+
+footer {
+    color: var(--text);
+    background-color: var(--background);
+}
+
+.title {
+    color: var(--titles);
 }

@@ -20,13 +20,17 @@ const SwitchDarkMode: React.FC<SwitchDarkModeProps> = ({ className = "" }) => {
 
     const toDark = () => {
         setIsDarkMode(true);
-        document.documentElement.setAttribute('data-theme', 'dark');
+        const root = document.querySelector("html");
+        if (!root) return;
+        !root.classList.contains("dark") && root.classList.add("dark");
         localStorage.theme = "dark";
     };
 
     const toLight = () => {
         setIsDarkMode(false);
-        document.documentElement.setAttribute('data-theme', 'light');
+        const root = document.querySelector("html");
+        if (!root) return;
+        root.classList.remove("dark");
         localStorage.theme = "light";
     };
 

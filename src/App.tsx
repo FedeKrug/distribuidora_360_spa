@@ -4,16 +4,19 @@ import { WhatsappFloatingButton } from './components/WhatsappFloatingButton'
 import { AppRouter } from './router/AppRouter'
 import { BrowserRouter } from 'react-router-dom'
 import './styles/styles.css'
+import { ThemeProvider } from './context/ThemeContext'
 
 const App = () => {
 
   return (<>
     <BrowserRouter>
-      <Navbar />
-      {/* <Navbar2 /> */}
-      <AppRouter />
-      <WhatsappFloatingButton />
-      <Footer />
+      <ThemeProvider>
+        <Navbar />
+        {/* <Navbar2 /> */}
+        <AppRouter />
+        <WhatsappFloatingButton />
+        <Footer />
+      </ThemeProvider>
     </BrowserRouter>
   </>
   )

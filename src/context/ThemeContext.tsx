@@ -5,7 +5,7 @@ type IThemeContext = {
     setIsDark: (val: boolean) => void;
 }
 type ThemeProviderType = {
-    children: JSX.Element;
+    children: any;
 }
 
 const defaultThemeContext: IThemeContext = {

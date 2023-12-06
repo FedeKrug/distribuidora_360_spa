@@ -4,6 +4,7 @@ export type ProductsType = {
     _id?: Id<"sampleProducts">;
     _creationTime?: number;
     imageId: string;
+    image?: string;
     price: number;
     title: string;
 }

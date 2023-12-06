@@ -3,16 +3,16 @@ import { ProductsType } from '../data/products'
 import '../styles/styles.css'
 
 
-export const ProductComponent = ({ title, imageId, price }: ProductsType) => {
+export const ProductComponent = ({ title, image, price }: ProductsType) => {
     return (
         <Link className="card m-2 text-decoration-none product"
             to='/producto'
             style={{ width: '18rem' }}
         >
-            <img src={imageId} className="card-img-top" alt="image" />
+            <img src={image} className="card-img-top" alt="image" />
             <div className="card-body text-center ">
                 <h5 className="card-title ">{title}</h5>
-                <p className="card-text ">{price}</p>
+                <p className="card-text ">{price}$</p>
                 {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
             </div>
         </Link>

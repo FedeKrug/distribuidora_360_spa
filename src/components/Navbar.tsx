@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom"
 import { AvatarDropdown } from "./AvatarDropdown"
+import SwitchDarkMode from "./SwitchToDarkMode"
+import '../styles/styles.css'
 
 export const Navbar = () => {
     return (
         <header className="section-header">
 
-            <nav className="navbar navbar-dark navbar-expand p-0 bg-dark">
+            <nav className="navbar navbar-dark navbar-expand p-0 bg-dark  ">
                 <div className="container-fluid">
                     <ul className="navbar-nav d-none d-md-flex mr-auto">
-                        <li className="nav-item"><Link className="nav-link fw-bold" to="/" data-abc="true">Distribuidora 360</Link></li>
-                        <li className="nav-item"><Link className="nav-link fw-bold" to="/contacto" data-abc="true">Contacto</Link></li>
-                        <li className="nav-item"><Link className="nav-link fw-bold" to="/preguntas-frecuentes" data-abc="true">Preguntas Frecuentes</Link></li>
+                        <li className="nav-item"><Link className="nav-link fw-bold title" to="/" data-abc="true">Distribuidora 360</Link></li>
+                        <li className="nav-item"><Link className="nav-link fw-bold title" to="/contacto" data-abc="true">Contacto</Link></li>
+                        <li className="nav-item"><Link className="nav-link fw-bold title" to="/preguntas-frecuentes" data-abc="true">Preguntas Frecuentes</Link></li>
                     </ul>
                     <ul className="navbar-nav d-flex align-items-center">
                         <li className="nav-item">
+                            <SwitchDarkMode />
                             <AvatarDropdown />
                         </li>
                     </ul>
@@ -54,6 +57,16 @@ export const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categorías
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a className="dropdown-item" href="#">Herramientas</a></li>
+                                    <li><a className="dropdown-item" href="#">Maquinarias</a></li>
+                                    <li><a className="dropdown-item" href="#">Limpieza</a></li>
+                                </ul>
+                            </li>
                             <li className="nav-item">
                                 <a className="nav-link active" aria-current="page" href="#">Electronics</a>
                             </li>
@@ -62,16 +75,6 @@ export const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Furnitures</a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Mobiles
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a className="dropdown-item" href="#">Smart Phones</a></li>
-                                    <li><a className="dropdown-item" href="#">Feature Phones</a></li>
-                                    <li><a className="dropdown-item" href="#">Mobile Covers</a></li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
