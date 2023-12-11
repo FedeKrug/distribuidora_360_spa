@@ -5,15 +5,19 @@
     --titles: #196380;
     --footer: #095803;
     --header: #ae5360;
+    --productBackground: #bf1850;
+    --productText: #000;
 }
 
 [data-theme="dark"] {
-    --primary: #e86936;
+    --primary: #63a6d9;
     --background: #0c221c;
     --text: #fff;
     --titles: #ae0;
     --footer: #ee3360;
     --header: #8095;
+    --productBackground: #71ff55;
+    --productText: #000;
 }
 
 body {
@@ -27,9 +31,9 @@ body {
 }
 
 .product {
-    color: var(--text);
+    color: var(--productText);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: var(--background);
+    background-color: var(--productBackground);
 }
 
 footer {

@@ -3,10 +3,11 @@ import { Id } from "../../convex/_generated/dataModel";
 export type ProductsType = {
     _id?: Id<"sampleProducts">;
     _creationTime?: number;
-    imageId: string;
+    imageId?: string;
     image?: string;
-    price: number;
-    title: string;
+    precio: string;
+    articulo: string;
+    oferta?: string;
 }
 
 export type ProductosType = {

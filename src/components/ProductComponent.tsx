@@ -3,7 +3,7 @@ import { ProductsType } from '../data/products'
 import '../styles/styles.css'
 
 
-export const ProductComponent = ({ title, image, price }: ProductsType) => {
+export const ProductComponent = ({ articulo: title, image, precio: price }: ProductsType) => {
     return (
         <Link className="card m-2 text-decoration-none product"
             to='/producto'
