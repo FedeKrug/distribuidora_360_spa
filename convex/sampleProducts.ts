@@ -12,7 +12,7 @@ export const get = query(async ({ db, storage }) => {
     const sampleProducts = await db.query("sampleProducts").collect();
     return await asyncMap(sampleProducts, async (product) => ({
         ...product,
-        // image: (await storage.getUrl(product.imageId)) ?? "",
+        image: (await storage.getUrl(product.imageId)) ?? "",
     }));
 });
 

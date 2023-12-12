@@ -3,10 +3,10 @@ import '../styles/styles.css'
 // import '../styles/footer.css'
 // import { FaInstagram, FaGoogle, FaFacebook, FaTiktok } from 'react-icons/fa'
 import { email, phoneNumber } from '../data/constants';
-import { ShowThemeColor } from '../data/ThemeManager';
+
 
 export const Footer = () => {
-    ShowThemeColor();
+
     return (
 
         <footer className="text-center text-lg-start text-white primary">

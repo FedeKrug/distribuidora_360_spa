@@ -8,6 +8,6 @@ export default defineSchema({
         marca: v.string(),
         oferta: v.string(),
         precio: v.string(),
-        //imageId: v.string(),
+        imageId: v.string(),
     }),
 });
