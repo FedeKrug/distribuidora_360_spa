@@ -1,22 +1,19 @@
-import React, { useContext } from 'react'
-import { PaginationContext } from '../context/PaginationContext';
+
 
 type PaginationType = {
     totalPosts: number;
-    postsPerPage: number;
+    productsPerPage: number;
     setCurrentPage: (val: number) => void
     currentPage: number;
 }
 
-export const PaginationComponent = () => {
+export const PaginationComponent = ({ currentPage, setCurrentPage, totalPosts, productsPerPage }: PaginationType) => {
     let pages = [];
-    const { currentPage, setCurrentPage, productsPerPage, totalPosts } = useContext(PaginationContext);
-
+    // const { currentPage, setCurrentPage, productsPerPage, totalPosts } = useContext(PaginationContext);
     for (let i = 1; i <= Math.ceil(totalPosts / productsPerPage); i++) {
         pages.push(i);
     }
 
-    console.log(totalPosts, currentPage)
 
     return (
         <nav aria-label="Page navigation example">

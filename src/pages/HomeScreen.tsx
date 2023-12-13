@@ -7,7 +7,6 @@ export const HomeScreen = () => {
         <div>
             <Slider />
             <ProductsList />
-            <PaginationComponent />
         </div>
     )
 }

@@ -25,11 +25,10 @@ const defaultValue: IPaginationProviderType = {
 export const PaginationContext = createContext(defaultValue);
 
 export const PaginationProvider = ({ children }: PaginationProviderType) => {
-    const [currentPage, setCurrentPage] = useState(1);
-    const [productsPerPage, setPostsPerPage] = useState(10);
 
-    const lastPostIndex = currentPage * productsPerPage;
-    const firstPostIndex = lastPostIndex - productsPerPage;
+
+
+
 
     const productsData = async () => { return (await useQuery(api.sampleProducts.get)) };
     console.log({ productsData })

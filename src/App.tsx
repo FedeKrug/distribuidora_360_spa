@@ -12,15 +12,15 @@ const App = () => {
   return (<>
     <BrowserRouter>
 
-      <PaginationProvider>
-        <ThemeProvider>
-          <Navbar />
-          {/* <Navbar2 /> */}
-          <AppRouter />
-          <WhatsappFloatingButton />
-          <Footer />
-        </ThemeProvider>
-      </PaginationProvider>
+      {/* <PaginationProvider> */}
+      <ThemeProvider>
+        <Navbar />
+        {/* <Navbar2 /> */}
+        <AppRouter />
+        <WhatsappFloatingButton />
+        <Footer />
+      </ThemeProvider>
+      {/* </PaginationProvider> */}
     </BrowserRouter>
   </>
   )
