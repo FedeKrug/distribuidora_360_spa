@@ -1,8 +1,13 @@
-import { api } from "../../convex/_generated/api"
-import { useQuery } from "convex/react";
+import { ProductSchemaType } from "../../convex/sampleProducts";
 
-export const productsApi = async () => {
-    const resp = await useQuery(api.sampleProducts.get);
+export const productsApi = async (productsData: ProductSchemaType[]) => {
 
-    console.log('resp: ' + { resp });
+    const productsArr: ProductSchemaType[] = await productsData.map((product: ProductSchemaType) => {
+        console.log({ product })
+        return {
+            ...product
+        }
+    }
+    )
+    return productsArr;
 }

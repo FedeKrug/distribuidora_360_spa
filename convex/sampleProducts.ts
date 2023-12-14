@@ -6,6 +6,16 @@ import { asyncMap } from "./lib/relationships";
 //     console.log('Hello, this is db function')
 //     return await db.query('sampleProducts').collect();
 // });
+export type ProductSchemaType = {
+    _creationTime: number;
+    codigo: string;
+    articulo: string;
+    marca: string;
+    oferta: string;
+    precio: string;
+    imageId: string;
+}
+
 
 
 export const get = query(async ({ db, storage }) => {
