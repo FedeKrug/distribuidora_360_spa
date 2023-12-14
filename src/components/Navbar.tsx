@@ -5,6 +5,7 @@ import SwitchDarkMode from "./SwitchToDarkMode"
 import '../styles/styles.css'
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { SearchForm } from "./SearchForm";
 
 export const Navbar = () => {
 
@@ -34,11 +35,7 @@ export const Navbar = () => {
                         <Link className="col-md-2" to='/'>
                             <img className="d-none d-md-flex" src={`${(isDark) ? '../../public/images/Logo3.png' : '../../public/images/Logo4.png'}`} width="100" />
                         </Link>
-                        <div className="col-md-8">
-                            <div className="d-flex form-inputs">
-                                <input className="form-control rounded-pill" type="text" placeholder="Search any product..." />
-                            </div>
-                        </div>
+                        <SearchForm />
 
                         <div className="col-md-2">
                             <div className="d-flex d-md-flex flex-row align-items-center">

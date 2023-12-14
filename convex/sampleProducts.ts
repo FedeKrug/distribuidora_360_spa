@@ -1,6 +1,8 @@
 import { query } from "./_generated/server";
 import { asyncMap } from "./lib/relationships";
-
+import { useQuery } from "convex/react";
+import { ProductsType } from '../src/data/products'
+import { api } from './_generated/api';
 /*Funciones o metodos que se usaran en la base de datos de convex*/
 // export const get = query(async ({ db, storage }) => {
 //     console.log('Hello, this is db function')
@@ -15,6 +17,7 @@ export type ProductSchemaType = {
     precio: string;
     imageId: string;
 }
+
 
 
 

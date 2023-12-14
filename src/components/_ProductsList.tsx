@@ -4,11 +4,11 @@ import { api } from '../../convex/_generated/api';
 import { ProductComponent } from './ProductComponent'
 import { useQuery } from "convex/react";
 import { PaginationComponent } from './PaginationComponent';
-import { useProducts } from '../hooks/useProducts';
+
 
 export const ProductsList = () => {
 
-    useProducts();
+
     // const [currentPage, setCurrentPage] = useState(1);
     // const [productsPerPage, setPostsPerPage] = useState(10);
     // const sampleProducts = useQuery(api.sampleProducts.get);
