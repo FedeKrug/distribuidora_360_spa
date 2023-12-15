@@ -3,6 +3,9 @@ import { Route, Routes } from 'react-router-dom'
 import { RootState } from '.././store';
 import { PrivateRoute } from './PrivateRoute';
 import { pages, publicPages } from '../router';
+import { Navbar } from '../components/Navbar';
+import { SearchComponent } from '../components/SearchComponent';
+import { CategoriesComponent } from '../components/CategoriesComponent';
 
 export const PublicRoute = () => {
     const { status } = useSelector((state: RootState) => state.auth);
@@ -10,6 +13,8 @@ export const PublicRoute = () => {
     if (status === 'authenticated') {
         return (
             <PrivateRoute>
+                <SearchComponent />
+                <CategoriesComponent />
                 <Routes>
                     {pages.map(({ Component, path }) =>
                         <Route key={path} element={Component} path={path} />)}

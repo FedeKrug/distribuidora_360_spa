@@ -11,7 +11,9 @@ export interface LocationStates {
     "/contacto"?: {};
     "/login"?: {};
     "/signup"?: {};
+    "/registro"?: {};
     "/forgot-password"?: {};
+    '/preguntas-frecuentes'?: {};
     "/page404"?: {};
 }
 

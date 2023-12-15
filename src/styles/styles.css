@@ -48,3 +48,21 @@ footer {
 .categories {
     background-color: #484198;
 }
+
+.account-form {
+    width: 40%;
+    margin-top: 50px;
+}
+
+@media (max-width: 576px) {
+
+    /* … */
+    .account-form {
+        width: 90%;
+
+    }
+}
+
+.text {
+    color: var(--text);
+}

@@ -1,23 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
-import { HomeScreen } from '../pages/HomeScreen'
-import { Error404Page } from '../pages/Error404Page'
-import { ContactPage } from '../pages/ContactPage'
-import { FAQScreen } from '../pages/FAQScreen'
-import { ProductPage } from '../pages/ProductPage'
+import { PublicRoute } from './PublicRoute'
 
 
 
 export const AppRouter = () => {
     return (
         <Routes>
-            <Route path='/' element={<HomeScreen />} />
-            <Route path='/contacto' element={<ContactPage />} />
-            <Route path='/preguntas-frecuentes' element={<FAQScreen />} />
-            <Route path='/producto' element={<ProductPage />} />
-
-
-
-            <Route path='/*' element={<Error404Page />} />
+            <Route path='/*' element={<PublicRoute />} />
         </Routes>
 
     )

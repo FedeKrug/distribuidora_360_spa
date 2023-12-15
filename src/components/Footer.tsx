@@ -3,10 +3,12 @@ import '../styles/styles.css'
 // import '../styles/footer.css'
 // import { FaInstagram, FaGoogle, FaFacebook, FaTiktok } from 'react-icons/fa'
 import { email, phoneNumber } from '../data/constants';
+import { useSelector } from 'react-redux';
+import { RootState } from '@reduxjs/toolkit/query';
 
 
 export const Footer = () => {
-
+    const { status } = useSelector((state: any) => state.auth)
     return (
 
         <footer className="text-center text-lg-start text-white primary">
@@ -26,18 +28,21 @@ export const Footer = () => {
                             </p>
                         </div>
 
-                        <hr className="w-100 clearfix d-md-none" />
+                        {(status === 'authenticated') &&
+                            <>
+                                <hr className="w-100 clearfix d-md-none" />
+                                <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ps-4">
+                                    <h6 className="text-uppercase mb-4 font-weight-bold">Productos</h6>
+                                    <ul className='nav-link list-unstyled'>
+                                        <li ><Link className='text-decoration-none text-white' to="">Herramientas</Link></li>
+                                        <li><Link className='text-decoration-none text-white' to="">Maquinarias</Link></li>
+                                        <li><Link className='text-decoration-none text-white' to="">Electricidad</Link></li>
+                                    </ul>
+                                </div>
 
-                        <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ps-4">
-                            <h6 className="text-uppercase mb-4 font-weight-bold">Productos</h6>
-                            <ul className='nav-link list-unstyled'>
-                                <li ><Link className='text-decoration-none text-white' to="">Herramientas</Link></li>
-                                <li><Link className='text-decoration-none text-white' to="">Maquinarias</Link></li>
-                                <li><Link className='text-decoration-none text-white' to="">Electricidad</Link></li>
-                            </ul>
-                        </div>
-
-                        <hr className="w-100 clearfix d-md-none" />
+                                <hr className="w-100 clearfix d-md-none" />
+                            </>
+                        }
 
                         <hr className="w-100 clearfix d-md-none" />
 

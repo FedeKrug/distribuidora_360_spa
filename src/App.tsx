@@ -3,11 +3,11 @@ import { Navbar } from './components/Navbar'
 import { WhatsappFloatingButton } from './components/WhatsappFloatingButton'
 import { AppRouter } from './router/AppRouter'
 import { BrowserRouter } from 'react-router-dom'
-import './styles/styles.css'
 import { ThemeProvider } from './context/ThemeContext'
 import { Provider } from 'react-redux'
 import { persistor, store } from './store'
 import { PersistGate } from 'redux-persist/integration/react'
+import './styles/styles.css'
 
 const App = () => {
 
