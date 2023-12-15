@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { api } from '../../convex/_generated/api';
 import { ProductComponent } from './ProductComponent'
 import { useQuery } from "convex/react";
-import { PaginationComponent } from './PaginationComponent';
+
 
 const productsPerPage = 20;
 
@@ -42,12 +42,6 @@ export const ProductsList = () => {
             ))}
 
         </div >
-        {/* <PaginationComponent
-            currentPage={currentPage}
-            productsPerPage={productsPerPage}
-            setCurrentPage={setCurrentPage}
-            totalPosts={sampleProducts!.length}
-        /> */}
         <div className='d-flex justify-content-center my-2'>
             {
                 (currentPage > 0)
@@ -56,7 +50,7 @@ export const ProductsList = () => {
                     className='btn btn-primary'
                     onClick={previousPage}
                 >
-                    Prev.
+                    «
                 </button>
             }
             &nbsp;
@@ -64,7 +58,7 @@ export const ProductsList = () => {
                 className='btn btn-primary'
                 onClick={nextPage}
             >
-                Next
+                »
             </button>
         </div>
     </>

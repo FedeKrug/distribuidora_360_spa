@@ -5,23 +5,26 @@ import { AppRouter } from './router/AppRouter'
 import { BrowserRouter } from 'react-router-dom'
 import './styles/styles.css'
 import { ThemeProvider } from './context/ThemeContext'
-import { PaginationProvider } from './context/PaginationContext'
+import { Provider } from 'react-redux'
+import { persistor, store } from './store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const App = () => {
 
   return (<>
-    <BrowserRouter>
+    <Provider store={store}>
 
-      {/* <PaginationProvider> */}
-      <ThemeProvider>
-        <Navbar />
-        {/* <Navbar2 /> */}
-        <AppRouter />
-        <WhatsappFloatingButton />
-        <Footer />
-      </ThemeProvider>
-      {/* </PaginationProvider> */}
-    </BrowserRouter>
+      <PersistGate loading={<h4>Cargando</h4>} persistor={persistor}>
+        <BrowserRouter>
+          <ThemeProvider>
+            <Navbar />
+            <AppRouter />
+            <WhatsappFloatingButton />
+            <Footer />
+          </ThemeProvider>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </>
   )
 }
