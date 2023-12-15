@@ -48,19 +48,25 @@ export const ProductsList = () => {
             setCurrentPage={setCurrentPage}
             totalPosts={sampleProducts!.length}
         /> */}
-        <button
-            className='btn btn-primary'
-            onClick={previousPage}
-        >
-            Prev.
-        </button>
-        &nbsp;
-        <button
-            className='btn btn-primary'
-            onClick={nextPage}
-        >
-            Next
-        </button>
+        <div className='d-flex justify-content-center my-2'>
+            {
+                (currentPage > 0)
+                &&
+                <button
+                    className='btn btn-primary'
+                    onClick={previousPage}
+                >
+                    Prev.
+                </button>
+            }
+            &nbsp;
+            <button
+                className='btn btn-primary'
+                onClick={nextPage}
+            >
+                Next
+            </button>
+        </div>
     </>
     )
 }
