@@ -1,16 +1,12 @@
-import { Link } from "react-router-dom"
-import { AvatarDropdown } from "./AvatarDropdown"
-import { FaShoppingCart } from "react-icons/fa";
-import SwitchDarkMode from "./SwitchToDarkMode"
-import '../styles/styles.css'
-import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
-import { SearchForm } from "./SearchForm";
-import { SearchComponent } from "./SearchComponent";
-import { CategoriesComponent } from "./CategoriesComponent";
+import { Link } from "react-router-dom";
+import { AvatarDropdown } from "./AvatarDropdown";
+import SwitchDarkMode from "./SwitchToDarkMode";
+import '../styles/styles.css';
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 export const Navbar = () => {
-
+    const { status } = useSelector((state: RootState) => state.auth);
 
     return (
         <header className="section-header">
@@ -25,7 +21,10 @@ export const Navbar = () => {
                     <ul className="navbar-nav d-flex align-items-center">
                         <li className="nav-item">
                             <SwitchDarkMode />
-                            <AvatarDropdown />
+                            {
+                                (status === 'authenticated') &&
+                                <AvatarDropdown />
+                            }
                         </li>
                     </ul>
                 </div>

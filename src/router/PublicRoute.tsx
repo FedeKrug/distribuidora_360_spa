@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom'
 import { RootState } from '.././store';
 import { PrivateRoute } from './PrivateRoute';
 import { pages, publicPages } from '../router';
-import { Navbar } from '../components/Navbar';
 import { SearchComponent } from '../components/SearchComponent';
 import { CategoriesComponent } from '../components/CategoriesComponent';
 

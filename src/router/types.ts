@@ -15,6 +15,8 @@ export interface LocationStates {
     "/forgot-password"?: {};
     '/preguntas-frecuentes'?: {};
     "/page404"?: {};
+    "/recuperar-clave"?: {};
+
 }
 
 export type PathName = keyof LocationStates;
