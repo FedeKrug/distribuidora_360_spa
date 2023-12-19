@@ -7,7 +7,7 @@ export const ProductComponent = ({ articulo: title, image, precio: price }: Prod
     return (
         <Link className="card m-2 text-decoration-none product"
             to='/producto'
-            style={{ width: '18rem', height: 100 }}
+            style={{ width: '18rem' }}
         >
             <img src={image} className="card-img-top" alt="image" />
             <div className="card-body text-center ">

@@ -94,3 +94,16 @@ footer {
     left: 0;
     z-index: 1;
 }
+
+.button {
+    background-color: var(--primary);
+    color: var(--titles);
+    font-weight: bolder;
+    text-align: center;
+    width: 10%;
+    border-radius: 30px;
+}
+
+.error404Page {
+    width: 50%;
+}

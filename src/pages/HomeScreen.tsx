@@ -1,6 +1,6 @@
 import { Slider } from '../components/Slider'
 import { ProductsList } from '../components/ProductsList'
-import { PaginationComponent } from '../components/PaginationComponent'
+
 
 
 
