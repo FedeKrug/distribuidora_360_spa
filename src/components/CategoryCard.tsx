@@ -1,17 +1,16 @@
-import React from 'react'
 import { CategoryType } from '../data/categories'
+import { Link } from 'react-router-dom'
 
 
 
-export const CategoryCard = ({ title, description, img, action }: CategoryType) => {
+export const CategoryCard = ({ title, description, img }: CategoryType) => {
     return (
-        <div className="card m-2" style={{ width: "18rem" }}>
-            <img src={img} className="card-img-top" alt="image" />
-            <div className="card-body">
+        <Link to={title} className="category-card" style={{ width: "18rem" }}>
+            <img src={img} height={200} className="card-img-top rounded" alt="image" />
+            <div className="category-content text-center">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
-                <button onClick={action} className="btn btn-primary">Descargar Catálogo</button>
             </div>
-        </div>
+        </Link>
     )
 }
