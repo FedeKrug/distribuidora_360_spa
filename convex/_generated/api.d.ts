@@ -16,7 +16,6 @@ import type {
 } from "convex/server";
 import type * as lib_relationships from "../lib/relationships.js";
 import type * as sampleProducts from "../sampleProducts.js";
-import type * as tools from "../tools.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -29,7 +28,6 @@ import type * as tools from "../tools.js";
 declare const fullApi: ApiFromModules<{
   "lib/relationships": typeof lib_relationships;
   sampleProducts: typeof sampleProducts;
-  tools: typeof tools;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
