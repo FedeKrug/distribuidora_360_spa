@@ -19,7 +19,7 @@ export const RegisterPage = () => {
     const navigate = useNavigate();
 
     const isAuthenticating = useMemo(() => status === 'checking', [status])
-    const { displayName, email, password, onInputChange } = useForm({
+    const { displayName, email, password, onInputChange, formState } = useForm({
         email: '',
         password: '',
         displayName: ''
@@ -27,6 +27,7 @@ export const RegisterPage = () => {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
+        console.log({ formState })
         signUp();
     }
 

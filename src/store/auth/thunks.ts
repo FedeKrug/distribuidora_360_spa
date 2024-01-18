@@ -29,6 +29,7 @@ export const startRegisterWithEmailAndPassword = (email: string, password: strin
 
         setItem('auth', result);
         dispatch(signUp(result));
+        console.log({ result })
 
     }
 }
