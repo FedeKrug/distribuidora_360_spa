@@ -2,7 +2,7 @@ import { /*PayloadAction,*/ createSlice } from "@reduxjs/toolkit";
 
 
 
-type AuthStateType = {
+export type AuthStateType = {
     status: 'checking' | 'not-authenticated' | 'authenticated' | 'registered';
     uid: string | null;
     email: string | null;
@@ -12,7 +12,7 @@ type AuthStateType = {
 }
 
 const initialState: AuthStateType = {
-    status: "authenticated",
+    status: "not-authenticated",
     uid: null,
     email: null,
     displayName: null,

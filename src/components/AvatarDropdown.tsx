@@ -1,14 +1,15 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useForm } from '../hooks/useForm';
 import { logout } from '../store/auth';
-
+import { RootState } from '../store';
 
 export const AvatarDropdown = () => {
     const dispatch = useDispatch();
     const { onResetForm, initialState } = useForm({});
-
+    const user = useSelector((state: RootState) => state.auth);
+    const { displayName, photoURL } = user;
 
     const handleLogout = async () => {
         try {
@@ -18,8 +19,7 @@ export const AvatarDropdown = () => {
             console.error(err);
         }
     }
-
-
+    console.log({ user })
     return (
         <div className="btn-group">
             <button className="me-3 border-0 d-flex flex-row align-items-center bg-dark btn-lg "
@@ -27,8 +27,10 @@ export const AvatarDropdown = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                <img src="https://i.imgur.com/EYFtR83.jpg" className="rounded-circle" width="35" />
-                <span className="nav-link d-flex align-items-center">UserName</span>
+                <img src={photoURL ?? "../../public/images/User.png"} className="rounded-circle" width="35" />
+
+
+                <span className="nav-link d-flex align-items-center">{displayName ?? "Usuario"} </span>
             </button>
             <ul className="dropdown-menu dropdown-menu-start dropdown-menu-md-end dropdown-menu-dark">
                 <li><Link className="dropdown-item" to="/cuenta">Cuenta</Link></li>

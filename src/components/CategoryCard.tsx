@@ -1,16 +1,19 @@
 import { CategoryType } from '../data/categories'
 import { Link } from 'react-router-dom'
+import "../styles/categoryCard.css"
 
 
-
-export const CategoryCard = ({ title, description, img }: CategoryType) => {
+export const CategoryCard = ({ title, img }: CategoryType) => {
     return (
-        <Link to={title} className="category-card" style={{ width: "18rem" }}>
-            <img src={img} height={200} className="card-img-top rounded" alt="image" />
-            <div className="category-content text-center">
-                <h5 className="card-title">{title}</h5>
-                <p className="card-text">{description}</p>
-            </div>
-        </Link>
+        <div className='category'>
+
+            <Link to={`/${title}`} className="card" style={{ width: "18rem" }}>
+                <img src={img} className="card-img-top" alt={title} />
+
+                <div className="category-content">
+                    <h3 className="card-text">{title}</h3>
+                </div>
+            </Link>
+        </div>
     )
 }

@@ -17,11 +17,11 @@ export const SearchComponent = () => {
 
                     <div className="col-md-2">
                         <div className="d-flex d-md-flex flex-row align-items-center">
-                            <span className="shop-bag">
+                            {/* <span className="shop-bag">
                                 <FaShoppingCart />
                                 1
 
-                            </span>
+                            </span> */}
                             {/* <div className="d-flex flex-column ms-2">
                                     <span className="fw-bold">$27.90</span>
                                 </div> */}

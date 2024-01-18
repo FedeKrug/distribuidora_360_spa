@@ -38,7 +38,7 @@ export const categories: CategoryType[] = [
         action: () => console.log("title")
     },
     {
-        title: "Varios",
+        title: "Todos",
         description: "Descubra soluciones integrales para su hogar. Desde herramientas de calidad hasta expertos en plomería y jardinería, ofrecemos productos y servicios confiables para todas sus necesidades.",
         img: "../../public/images/varios.jpg",
         action: () => console.log("title")

@@ -2,7 +2,7 @@ import { FaGoogle } from 'react-icons/fa';
 import '../styles/styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';;
-import { FormEventHandler, useMemo, useState } from 'react';;
+import { useMemo, useState } from 'react';;
 import { useForm } from '../hooks/useForm';;
 import { startGoogleSignIn, startLoginWithEmailAndPassword } from '../store/auth/thunks';;
 import { setItem } from '../utils/localStorage';;
@@ -23,11 +23,6 @@ export const LoginPage = () => {
 
   const handleCheckboxChange = () => {
     setCheckBox((checked) => !checked);
-  }
-
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    signIn();
   }
 
   const signIn = async () => {
@@ -52,7 +47,7 @@ export const LoginPage = () => {
           <div
             className="tab-pane fade show active"
           >
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={signIn}>
               <div className="text-center mb-3">
                 <button
                   data-mdb-ripple-init
@@ -99,7 +94,7 @@ export const LoginPage = () => {
                     aria-controls="pills-login"
                     aria-selected="true"
                     type='submit'
-                  // onClick={signIn}
+                    onClick={signIn}
                   >
                     Ingresar
                   </button>
@@ -107,6 +102,18 @@ export const LoginPage = () => {
               </ul>
 
               <div className="row mb-4">
+                <div className="col-md-6 d-flex justify-content-center">
+                  {/* <div className="form-check mb-3 mb-md-0">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      checked={checkBox}
+                      onChange={handleCheckboxChange}
+                    />
+                    <label className="form-check-label" > Recuerdame </label>
+                  </div> */}
+                </div>
+
                 <div className="col-md-6 d-flex justify-content-center">
                   <Link to="/recuperar-clave">¿Olvidaste la contraseña?</Link>
                 </div>

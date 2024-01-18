@@ -15,7 +15,6 @@ export const startGoogleSignIn = () => {
         dispatch(checkingCredentials());
         const result = await SignInWithGoogle();
         if (!result.ok) return dispatch(logout(result.errorMessage));
-        console.log(result);
         setItem('auth', result);
         dispatch(login(result));
 
@@ -28,6 +27,7 @@ export const startRegisterWithEmailAndPassword = (email: string, password: strin
         const result = await registerWithEmailAndPassword(email, password);
         if (!result.ok) return dispatch(logout(result.errorMessage));
 
+        setItem('auth', result);
         dispatch(signUp(result));
 
     }
@@ -38,6 +38,7 @@ export const startLoginWithEmailAndPassword = (email: string, password: string) 
         dispatch(checkingCredentials());
         const result = await LoginWithEmailAndPassword(email, password);
         if (!result.ok) return dispatch(logout(result.errorMessage));
+        setItem('auth', result);
         dispatch(login(result));
 
     }

@@ -25,6 +25,11 @@ export const RegisterPage = () => {
         displayName: ''
     });
 
+    const handleSubmit = (event: any) => {
+        event.preventDefault();
+        signUp();
+    }
+
     const signUp = () => {
         //if(!formValidations)return;
         dispatch(startRegisterWithEmailAndPassword(email, password));
@@ -58,7 +63,7 @@ export const RegisterPage = () => {
                 </p>
 
                 <form
-                    onSubmit={signUp}
+                    onSubmit={handleSubmit}
                 >
                     <div className="row mb-4">
                         <div className="col">
@@ -109,9 +114,9 @@ export const RegisterPage = () => {
 
                             <button
                                 data-mdb-ripple-init
-                                type="button"
+                                type="submit"
                                 className="btn btn-primary btn-block mb-4 "
-                                onClick={signUp}
+                                //onClick={signUp}
                                 disabled={isAuthenticating}
                             >
                                 Crear Cuenta
@@ -124,69 +129,6 @@ export const RegisterPage = () => {
             </div>
         </div>
 
-
-
-
-        //         <form className="grid grid-cols-1 gap-6">
-        //           <label className="block">
-        //             <span className="text-neutral-800 dark:text-neutral-200">
-        //               {translate(tr.DisplayName)}
-        //             </span>
-        //             <Input
-        //               type="text"
-        //               placeholder="Example Name"
-        //               className="mt-1"
-        //               name="displayName"
-        //               value={displayName}
-        //               onChange={onInputChange}
-        //             />
-        //           </label>
-        //           <label className="block">
-        //             <span className="text-neutral-800 dark:text-neutral-200">
-        //               {translate(tr.EmailAddress)}
-        //             </span>
-        //             <Input
-        //               type="email"
-        //               placeholder="example@example.com"
-        //               className="mt-1"
-        //               name="email"
-        //               value={email}
-        //               onChange={onInputChange}
-        //             />
-        //           </label>
-        //           <label className="block">
-        //             <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
-        //               {translate(tr.Password)}
-        //             </span>
-        //             <Input
-        //               type="password"
-        //               className="mt-1"
-        //               name="password"
-        //               value={password}
-        //               onChange={onInputChange}
-        //             />
-        //           </label>
-        //           {
-        //             (email && password && displayName)
-        //             &&
-        //             <ButtonPrimary
-        //               type="submit"
-        //               disabled={isAuthenticating}
-        //               onClick={signUp}
-        //             >
-        //               {translate(tr.Continue)}
-        //             </ButtonPrimary>
-        //           }
-        //         </form>
-
-        //         {/* ==== */}
-        //         <span className="block text-center text-neutral-700 dark:text-neutral-300">
-        //           {translate(tr.AlreadyHaveAnAccount)} {` `}
-        //           <Link to="/login">{translate(tr.SignIn)}</Link>
-        //         </span>
-        //       </div>
-        //     </div>
-        //   </div>
     )
 }
 
