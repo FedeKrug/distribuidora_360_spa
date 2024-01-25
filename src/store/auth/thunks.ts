@@ -21,14 +21,15 @@ export const startGoogleSignIn = () => {
     }
 }
 
-export const startRegisterWithEmailAndPassword = (email: string, password: string) => {
+export const startRegisterWithEmailAndPassword = (email: string, password: string, displayName: string) => {
     return async (dispatch: any) => {
         dispatch(checkingCredentials());
         const result = await registerWithEmailAndPassword(email, password);
+        const resp = { ...result, displayName }
         if (!result.ok) return dispatch(logout(result.errorMessage));
 
-        setItem('auth', result);
-        dispatch(signUp(result));
+        setItem('auth', resp);
+        dispatch(signUp(resp));
         console.log({ result })
 
     }

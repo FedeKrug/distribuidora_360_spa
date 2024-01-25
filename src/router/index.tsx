@@ -8,14 +8,16 @@ import { RegisterPage } from '../pages/RegisterPage'
 import { ForgotPasswordPage } from '../pages/ForgotPasswordPage'
 import { Error404Page } from '../pages/Error404Page'
 import { AdminPage } from '../pages/AdminPage'
+import { BuscadorPage } from '../pages/BuscadorPage'
 
 export const pages: Page[] = [
     { path: '/', Component: <HomeScreen /> },
     { path: '/contacto', Component: <ContactPage /> },
     { path: '/sobre-nosotros', Component: <AboutPage /> },
     { path: '/preguntas-frecuentes', Component: <FAQScreen /> },
-    { path: '/*', Component: <Error404Page /> },
     { path: '/admin', Component: <AdminPage /> },
+    { path: '/buscador', Component: <BuscadorPage /> },
+    { path: '/*', Component: <Error404Page /> },
 ]
 
 export const publicPages: Page[] = [
@@ -25,6 +27,5 @@ export const publicPages: Page[] = [
     { path: '/preguntas-frecuentes', Component: <FAQScreen /> },
     { path: '/contacto', Component: <ContactPage /> },
     { path: '/sobre-nosotros', Component: <AboutPage /> },
-    { path: '/admin', Component: <AdminPage /> },
     { path: '/*', Component: <Error404Page /> },
 ]

@@ -17,6 +17,7 @@ export interface LocationStates {
     "/page404"?: {};
     "/recuperar-clave"?: {};
     "/admin"?: {};
+    "/buscador"?: {};
 
 }
 

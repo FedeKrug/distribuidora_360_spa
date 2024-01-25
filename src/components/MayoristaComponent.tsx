@@ -5,6 +5,7 @@ import "../styles/mayorista.css"
 export const MayoristaComponent = ({ mayoristaTitle, id, file, img }: MayoristaType) => {
 
     const handleUploadFile = () => {
+
         console.log("File Upload")
     }
     return (

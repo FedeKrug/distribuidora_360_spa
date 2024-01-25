@@ -33,7 +33,7 @@ export const RegisterPage = () => {
 
     const signUp = () => {
         //if(!formValidations)return;
-        dispatch(startRegisterWithEmailAndPassword(email, password));
+        dispatch(startRegisterWithEmailAndPassword(email, password, displayName));
         navigate('/');
     }
 
