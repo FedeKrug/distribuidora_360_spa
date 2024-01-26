@@ -24,7 +24,7 @@ export const products: ProductosType[] = [
         title: 'Producto de prueba 1',
         price: 34,
         id: 0,
-        image: '../../public/images/Vasija2.jpg'
+        image: '../../public/images/Doll.jpg'
     },
     {
         title: 'Producto de prueba 1',

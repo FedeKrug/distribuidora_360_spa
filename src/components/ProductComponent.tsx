@@ -3,18 +3,16 @@ import { ProductsType } from '../data/products'
 import '../styles/styles.css'
 
 
-export const ProductComponent = ({ articulo: title, image, precio: price }: ProductsType) => {
+export const ProductComponent = ({ _id, articulo: title, image, precio: price }: ProductsType) => {
     return (
-        <Link className="card m-2 text-decoration-none product"
-            to='/producto'
-            style={{ width: '18rem' }}
-        >
-            <img src={image} className="card-img-top" alt="image" />
-            <div className="card-body text-center ">
-                <h5 className="card-title ">{title}</h5>
-                <p className="card-text ">{price}$</p>
-                {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-            </div>
-        </Link>
+        <div className='product w-100 d-flex align-items-center' style={{ height: "250px", marginBottom: "3px" }}>
+            <Link className='col-8 d-flex justify-content-around flex-fill text-decoration-none' to={`/buscador/${_id}`}>
+                <img src={image} alt="img" height={100} />
+                <div className='row col-8 text-start'>
+                    <h5 className='product__title'>{title}</h5>
+                    <p className='product__text'>${price}</p>
+                </div>
+            </Link>
+        </div>
     )
 }

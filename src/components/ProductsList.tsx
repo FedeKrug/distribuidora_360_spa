@@ -4,7 +4,7 @@ import { ProductComponent } from './ProductComponent'
 import { useQuery } from "convex/react";
 
 
-const productsPerPage = 20;
+const productsPerPage = 10;
 
 export const ProductsList = () => {
 
@@ -42,7 +42,7 @@ export const ProductsList = () => {
             ))}
 
         </div >
-        <div className='d-flex justify-content-center my-2'>
+        <div className='d-flex justify-content-center my-2 flex-fill'>
             {
                 (currentPage > 0)
                 &&

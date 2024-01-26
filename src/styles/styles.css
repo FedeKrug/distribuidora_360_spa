@@ -36,6 +36,34 @@ body {
     background-color: var(--productBackground);
 }
 
+.product__title {
+    font-weight: bold;
+}
+
+.product__title,
+.product__text {
+    color: var(--productText);
+}
+
+
+.product:hover {
+    background-color: var(--primary);
+
+    .product__title {
+        font-size: 22px;
+    }
+
+    .product__text {
+        font-size: 20px;
+    }
+}
+
+.applied__filter {
+    width: fit-content;
+    padding: 0 10px;
+    background-color: var(--primary);
+}
+
 footer {
     color: var(--text);
 
