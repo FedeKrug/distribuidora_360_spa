@@ -3,8 +3,10 @@ const mysql = require("mysql")
 const myconnection = require("express-myconnection");
 const routes = require('./methods');
 
+const port = process.env.DEFAULT_PORT;
+
 const app = express();
-app.set("port", process.env.DEFAULT_PORT || 3000)
+app.set("port", port || 3000)
 
 const dbOptions = {
     host: "127.0.0.1",
@@ -21,9 +23,9 @@ app.use(express.json())
 
 
 //Routes
-app.get("/", (req, res) => {
-    res.send("Welcome to my api")
-})
+// app.get("/", (req, res) => {
+//     // res.send("Welcome to my api")
+// })
 
 app.use("/api", routes)
 
