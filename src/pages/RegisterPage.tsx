@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 import { startGoogleSignIn, startRegisterWithEmailAndPassword } from '../store/auth/thunks';
 import '../styles/styles.css';
+import { setItem } from '../utils/localStorage';
 
 const formValidations = {
     email: [(value: string) => value.includes('@'), 'El correo debe tener @'],
@@ -35,6 +36,7 @@ export const RegisterPage = () => {
         //if(!formValidations)return;
         dispatch(startRegisterWithEmailAndPassword(email, password, displayName));
         navigate('/');
+
     }
 
     const googleSignIn = () => {

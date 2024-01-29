@@ -1,20 +1,25 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from '../hooks/useForm';
 import { logout } from '../store/auth';
 import { RootState } from '../store';
+import { getItem, setItem } from '../utils/localStorage';
 
 export const AvatarDropdown = () => {
     const dispatch = useDispatch();
     const { onResetForm, initialState } = useForm({});
     const user = useSelector((state: RootState) => state.auth);
     const { displayName, photoURL } = user;
+    const navigate = useNavigate();
+
 
     const handleLogout = async () => {
         try {
             dispatch(logout('User Logout'));
+            navigate("/")
             onResetForm(initialState);
+
         } catch (err) {
             console.error(err);
         }

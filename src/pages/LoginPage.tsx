@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';;
 import { FormEventHandler, useMemo, useState } from 'react';;
 import { useForm } from '../hooks/useForm';;
 import { startGoogleSignIn, startLoginWithEmailAndPassword } from '../store/auth/thunks';;
-import { setItem } from '../utils/localStorage';;
+import { getItem, setItem } from '../utils/localStorage';;
 
 export const LoginPage = () => {
   const [checkBox, setCheckBox] = useState(false);
@@ -34,6 +34,8 @@ export const LoginPage = () => {
     dispatch(startLoginWithEmailAndPassword(email, password));
     setItem('auth', { email, password, status });
     navigate('/');
+    getItem("user");
+    console.log(getItem("user"))
   };
   const googleSignIn = () => {
     dispatch(startGoogleSignIn());
