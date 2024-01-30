@@ -2,29 +2,29 @@
 
 export type MayoristaType = {
     file?: any;
-    mayoristaTitle: string;
+    title: string;
     id: number;
-    img?: any
+    photo_url?: any
 }
 
 
 export const listasMayoristas: MayoristaType[] = [
     {
         id: 0,
-        mayoristaTitle: "Mayorista 1",
-        img: "../../public/images/Cartera.jpg",
+        title: "Mayorista 1",
+        photo_url: "../../public/images/Cartera.jpg",
 
     },
     {
         id: 1,
-        mayoristaTitle: "Mayorista 2",
-        img: "../../public/images/Flor.jpg",
+        title: "Mayorista 2",
+        photo_url: "../../public/images/Flor.jpg",
 
     },
     {
         id: 2,
-        mayoristaTitle: "Mayorista 3",
-        img: "../../public/images/MiniDoll.jpg",
+        title: "Mayorista 3",
+        photo_url: "../../public/images/MiniDoll.jpg",
 
     }
 ]
