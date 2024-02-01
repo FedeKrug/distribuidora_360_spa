@@ -28,6 +28,10 @@ app.get("/", (req, res) => {
     res.send("Bienvenidos a la API de Distribuidora 360! Para ver las peticiones, ir a /api")
 })
 
+app.use("/api", (req, res) => {
+    res.send("Para ir a las listas de productos, ir a /productLists, por otro lado, para ir a los usuarios registrados, ir a /logged")
+})
+
 app.use("/api/productLists", productListsRoutes)
 
 app.use("/api/logged", logged_usersRoutes)

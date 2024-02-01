@@ -1,10 +1,11 @@
 import { MayoristaType } from '../data/listas'
 import { useModal } from '../hooks/useModal'
 import "../styles/mayorista.css"
-import { UploadProductListsModal } from './admin/UploadProductListsModal';
+import { ProductListModal } from './admin/ProductListModal';
 
 
-export const MayoristaComponent = ({ title, file, photo_url }: MayoristaType) => {
+export const MayoristaComponent = ({ title, photo_url, id }: MayoristaType) => {
+
 
     const { openModal, modalOpen, closeModal } = useModal();
     const handleUploadFile = () => {
@@ -26,7 +27,7 @@ export const MayoristaComponent = ({ title, file, photo_url }: MayoristaType) =>
                 </div>
 
             </button>
-            <UploadProductListsModal handleClose={closeModal} show={modalOpen} />
+            <ProductListModal handleClose={closeModal} show={modalOpen} dataId={id} title={title} />
         </>
     )
 }
