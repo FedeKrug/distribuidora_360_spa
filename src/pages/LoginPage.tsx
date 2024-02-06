@@ -35,7 +35,6 @@ export const LoginPage = () => {
     setItem('auth', { email, password, status });
     navigate('/');
     getItem("user");
-    console.log(getItem("user"))
   };
   const googleSignIn = () => {
     dispatch(startGoogleSignIn());

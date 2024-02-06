@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { listasMayoristas } from '../data/listas'
+import { useEffect, useState } from 'react'
+// import { listasMayoristas } from '../data/listas'
 import { MayoristaComponent } from '../components/MayoristaComponent'
-import { getAllProductLists } from '../api'
 import { ProductListModal } from '../components/admin/ProductListModal'
 import { useModal } from '../hooks/useModal'
+import { getAllProductLists } from '../api/productLists/productListsApi'
+import Axios from 'axios'
+
+const baseUrl = "http://localhost:3000";
 
 export const AdminPage = () => {
     const [productListsData, setProductListsData] = useState<any>([])
@@ -11,10 +14,17 @@ export const AdminPage = () => {
     const { openModal, modalOpen, closeModal } = useModal();
 
     const handleGetAllProducts = async () => {
-        const productsData = await getAllProductLists();
-        setProductListsData(productsData);
-
+        const response = await getAllProductLists();
+        setProductListsData(response);
     }
+
+    // const getProductsWithAxios = () => {
+    //     Axios.get("http://localhost:3000/api/productLists")
+    //         .then((res) => {
+    //             setProductListsData(res.data)
+    //             console.log({ productListsData })
+    //         })
+    // }
 
     const handleCreateNewList = () => {
         console.log("New List -> falta apuntar a la api")

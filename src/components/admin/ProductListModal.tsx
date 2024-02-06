@@ -5,6 +5,7 @@ import { MayoristaType } from '../../data/listas';
 import { createNewProductList, deleteProductList, updateProductList } from '../../api/productLists/productListsApi';
 import { useForm } from '../../hooks/useForm';
 import { useState } from 'react';
+import { FileDragArea } from '../FileDragArea';
 
 type ModalType = {
     handleShow?: () => void
@@ -16,16 +17,26 @@ type ModalType = {
     title?: string;
 }
 
+type ProductListTypeDB = {
+    title: string;
+    file: string;
+    id?: number;
+}
+
+const initialValue = {
+    title: "",
+    file: "",
+    id: 0,
+}
 
 export const ProductListModal = ({ handleClose, show, dataId, create = false }: ModalType) => {
 
-    const [newList, setNewList] = useState({
+    const [newList, setNewList] = useState<ProductListTypeDB>(initialValue);
+
+
+
+    const { title, file, onInputChange } = useForm({
         title: "",
-        photo_url: "",
-    })
-    const { title, photo_url } = newList;
-    const { file, formState, onInputChange, onResetForm } = useForm({
-        title,
         file: ""
 
     });
@@ -37,15 +48,25 @@ export const ProductListModal = ({ handleClose, show, dataId, create = false }: 
         handleClose();
     }
 
-    const handleProductList = () => {
+    const handleChangeProductList = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+        onInputChange(event);
+        setNewList({
+            title,
+            file
+        })
+    }
+
+    const handleProductList = async () => {
         if (create) {
             //crear nueva nota.
             // createNewProductList();
+            const response = await createNewProductList(newList)
+            console.log({ response })
             console.log("new product list -> falta apuntar a la api")
         }
         else {
             //actualizar nota.
-            updateProductList(newListId);
+            updateProductList(dataId);
             console.log("updated product list -> falta apuntar a la api")
         }
         handleClose();
@@ -65,7 +86,7 @@ export const ProductListModal = ({ handleClose, show, dataId, create = false }: 
                                 type="text"
                                 placeholder="Mayorista..."
                                 autoFocus
-                                onChange={onInputChange}
+                                onChange={handleChangeProductList}
                                 value={title}
                                 name='title'
                             />
@@ -74,8 +95,8 @@ export const ProductListModal = ({ handleClose, show, dataId, create = false }: 
                             className="mb-3"
                             controlId="exampleForm.ControlTextarea1"
                         >
-                            <input type='file' />
-                            {/* <FileDragArea /> */}
+                            <input type='file' value={file} name='file' onChange={handleChangeProductList} />
+                            <FileDragArea />
                         </Form.Group>
                     </Form>
                 </Modal.Body>

@@ -4,7 +4,7 @@ import "../styles/mayorista.css"
 import { ProductListModal } from './admin/ProductListModal';
 
 
-export const MayoristaComponent = ({ title, photo_url, id }: MayoristaType) => {
+export const MayoristaComponent = ({ title, photo_url, id, file }: MayoristaType) => {
 
 
     const { openModal, modalOpen, closeModal } = useModal();
@@ -13,7 +13,7 @@ export const MayoristaComponent = ({ title, photo_url, id }: MayoristaType) => {
         console.log("File Upload, falta apuntar a la api", { title }, { modalOpen })
 
     }
-
+    console.log({ file })
 
     return (
         <>

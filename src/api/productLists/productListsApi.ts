@@ -1,10 +1,11 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:3000/api/productLists/";
 
+axios.defaults.baseURL = baseUrl;
 
 export const getAllProductLists = async () => {
     try {
-        const response = await axios.get("/api/productLists");
+        const response = await axios.get("/");
         if (response.status === 200) {
             const { data } = response;
             console.log({ data })
@@ -16,11 +17,12 @@ export const getAllProductLists = async () => {
         console.log(error)
     }
 
+
 }
 
 export const getProductList = async (id: number) => {
     try {
-        const response = await axios.get(`/api/productLists/${id}`);
+        const response = await axios.get(`/${id}`);
         if (response.status === 200) {
             const { data } = response;
             console.log({ data })
@@ -32,37 +34,28 @@ export const getProductList = async (id: number) => {
     }
 }
 
-export const createNewProductList = async (token: any, body: any) => {
+export const createNewProductList = async (body: any) => {
     const data = {
         title: body.title,
-        photo_url: body.photo_url,
+        file: body.file,
     }
 
-    return new Promise((resolve, reject) => {
-        return axios({
-            url: `${baseUrl}/api/productLists`,
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                Accept: 'application/json'
-            },
-            data: data
-        })
-            .then(response => response)
-            .then(json => {
-                return resolve({
-                    data: json.data
-                });
-            })
-            .catch(err => {
-                return reject(err.response)
-            });
-    });
+    try {
+        const response = await axios.post(`/`, data);
+        if (response.status === 200) {
+            const { data } = response;
+            console.log({ data })
+            return data;
+        }
+        else return null;
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 export const updateProductList = async (id: number) => {
     try {
-        const response = await axios.put(`/api/productLists/${id}`);
+        const response = await axios.post(`/${id}`);
         if (response.status === 200) {
             const { data } = response;
             console.log({ data })
@@ -77,7 +70,7 @@ export const updateProductList = async (id: number) => {
 
 export const deleteProductList = async (id: number) => {
     try {
-        const response = await axios.delete(`/api/productLists/${id}`);
+        const response = await axios.delete(`/${id}`);
         if (response.status === 200) {
             const { data } = response;
             console.log({ data })
