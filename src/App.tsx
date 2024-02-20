@@ -1,10 +1,13 @@
-
+import { AppRouter } from './router/AppRouter'
 import './App.css'
+import { BrowserRouter } from 'react-router-dom'
 
-function App() {
+const App = () => {
   return (
     <>
-      <h2 className='text-red-500'>Hola Mundo</h2>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
     </>
   )
 }
