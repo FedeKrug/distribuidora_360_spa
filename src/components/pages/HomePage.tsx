@@ -1,7 +1,10 @@
-import React from 'react'
+import { Footer } from '../Footer'
+import { Navbar } from '../Navbar'
+
 
 export const HomePage = () => {
-    return (
-        <h2>HomePage</h2>
+    return (<div>
+        Home Page
+    </div>
     )
 }
