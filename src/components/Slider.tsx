@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 
 const sliderItems = [
@@ -30,7 +30,7 @@ export const Slider = () => {
 
     return (
         <div id="controls-carousel" className="relative w-full" data-carousel="static">
-            <div className="relative h-72 overflow-hidden rounded-lg md:h-96">
+            <div className="relative  overflow-hidden rounded-lg md:h-[500px]">
                 {
                     sliderItems.map((item, index) =>
                         <div key={index} className={`duration-700 ease-in-out ${sliderCount === index ? "" : "hidden"}`} data-carousel-item={item.active}>
