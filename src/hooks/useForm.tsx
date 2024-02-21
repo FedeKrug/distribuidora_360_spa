@@ -1,30 +1,35 @@
-import { useState } from "react"
+import React, { useState } from 'react'
+import { setItem } from './localStorage';
 
-type FormType = {
 
+
+export type FormStateType = {
+    name?: string,
+    phone?: string,
+    message?: string
 }
 
-const initialState: FormType = {};
 
-export const useForm = () => {
-    const [formState, setFormState] = useState<FormType>(initialState)
+export const useForm = (initialForm: any) => {
+    const [formState, setFormState] = useState(initialForm);
 
-    const onChangeInput = () => {
-
+    const onInputChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+        const { name, value } = event.target;
+        setFormState({
+            ...formState,
+            [name]: value
+        })
     }
-
-    const onSubmit = () => {
-
-    }
-
-
 
     const onResetForm = () => {
-        setFormState(initialState);
+        setFormState(initialForm);
+        setItem('root', initialForm);
     }
+
     return {
+        ...formState,
         formState,
         onResetForm,
-        onChangeInput,
+        onInputChange
     }
 }

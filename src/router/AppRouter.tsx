@@ -7,7 +7,7 @@ import { StorePage } from '../components/pages/StorePage'
 import { SeachProductsPage } from '../components/pages/SeachProductsPage'
 
 export const AppRouter = () => {
-    return (<div >
+    return (<>
 
         <Routes>
             <Route path='/' element={<HomePage />} />
@@ -15,10 +15,12 @@ export const AppRouter = () => {
             <Route path='/contacto' element={<ContactPage />} />
             <Route path='/tienda' element={<StorePage />} />
             <Route path='/buscar-productos' element={<SeachProductsPage />} />
-            <Route path='/*' element={<Error404Page />} />
-        </Routes>
 
-    </div>
+            <Route path='/*' element={<Error404Page />} />
+
+        </Routes>
+    </>
+
     )
 }
 

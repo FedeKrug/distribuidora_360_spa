@@ -33,7 +33,7 @@ const classNames = (...classes: string[]) => {
 
 export const Navbar = () => {
   return (
-    <Disclosure as="header" className="fixed top-0 bg-white shadow flex-1 w-full mx-auto">
+    <Disclosure as="header" className="bg-white shadow flex-1 w-full mx-auto z-10">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">

@@ -3,43 +3,44 @@ import { Dialog, Disclosure, Transition } from '@headlessui/react'
 import { PlusSmIcon } from '@heroicons/react/solid'
 import { IoClose } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { ProductsList } from './ProductsList';
 
 const filters = [
+  // {
+  //   id: 'color',
+  //   name: 'Color',
+  //   options: [
+  //     { value: 'white', label: 'White' },
+  //     { value: 'beige', label: 'Beige' },
+  //     { value: 'blue', label: 'Blue' },
+  //     { value: 'brown', label: 'Brown' },
+  //     { value: 'green', label: 'Green' },
+  //     { value: 'purple', label: 'Purple' },
+  //   ],
+  // },
   {
-    id: 'color',
-    name: 'Color',
+    id: 'categoria',
+    name: 'Categoría',
     options: [
-      { value: 'white', label: 'White' },
-      { value: 'beige', label: 'Beige' },
-      { value: 'blue', label: 'Blue' },
-      { value: 'brown', label: 'Brown' },
-      { value: 'green', label: 'Green' },
-      { value: 'purple', label: 'Purple' },
+      { value: 'ferreteria', label: 'Ferretería' },
+      { value: 'electricidad', label: 'Electricidad' },
+      { value: 'sanitarios', label: 'Sanitarios' },
+      { value: 'jardineria', label: 'Jardinería' },
+      { value: 'ofertas', label: 'Ofertas' },
     ],
   },
-  {
-    id: 'category',
-    name: 'Category',
-    options: [
-      { value: 'new-arrivals', label: 'All New Arrivals' },
-      { value: 'tees', label: 'Tees' },
-      { value: 'crewnecks', label: 'Crewnecks' },
-      { value: 'sweatshirts', label: 'Sweatshirts' },
-      { value: 'pants-shorts', label: 'Pants & Shorts' },
-    ],
-  },
-  {
-    id: 'sizes',
-    name: 'Sizes',
-    options: [
-      { value: 'xs', label: 'XS' },
-      { value: 's', label: 'S' },
-      { value: 'm', label: 'M' },
-      { value: 'l', label: 'L' },
-      { value: 'xl', label: 'XL' },
-      { value: '2xl', label: '2XL' },
-    ],
-  },
+  // {
+  //   id: 'sizes',
+  //   name: 'Sizes',
+  //   options: [
+  //     { value: 'xs', label: 'XS' },
+  //     { value: 's', label: 'S' },
+  //     { value: 'm', label: 'M' },
+  //     { value: 'l', label: 'L' },
+  //     { value: 'xl', label: 'XL' },
+  //     { value: '2xl', label: '2XL' },
+  //   ],
+  // },
 ]
 
 function classNames(...classes: string[]) {
@@ -139,9 +140,9 @@ export const SidebarCategoryFilter = () => {
 
         <main className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="border-b border-gray-200 pb-10">
-            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">New Arrivals</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">Producto Buscado</h1>
             <p className="mt-4 text-base text-gray-500">
-              Checkout out the latest release of Basic Tees, new and improved with four openings!
+              500 resultados...
             </p>
           </div>
 
@@ -189,8 +190,9 @@ export const SidebarCategoryFilter = () => {
 
             {/* Product grid */}
             <div className="mt-6 lg:mt-0 lg:col-span-2 xl:col-span-3">
+              <ProductsList />
               {/* Replace with your content */}
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 lg:h-full" />
+              {/* <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 lg:h-full" /> */}
               {/* /End replace */}
             </div>
           </div>
