@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
-const logoSize = 25;
+
 
 const user = {
   name: 'Tom Cook',
@@ -39,14 +39,16 @@ export const Navbar = () => {
           <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
             <div className="relative h-16 flex justify-between">
               <div className="relative z-10 px-2 flex lg:px-0">
-                <div className="flex-shrink-0 flex items-center">
+                <div className=" flex items-center ">
                   <Link to="/">
                     <img
-                      className="block h-12 w-auto"
+                      className=" h-14 w-auto"
                       src="../../public/LogoTransparente.png"
                       alt="Workflow"
-                      height={logoSize}
                     />
+                    {/* <h2>
+                      Distribuidora 360
+                    </h2> */}
                   </Link>
                 </div>
               </div>
@@ -129,9 +131,9 @@ export const Navbar = () => {
             </div>
             <nav className="hidden lg:py-2 lg:flex lg:space-x-8" aria-label="Global">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className={classNames(
                     item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-900 hover:bg-gray-50 hover:text-gray-900',
                     'rounded-md py-2 px-3 inline-flex items-center text-sm font-medium'
@@ -139,7 +141,7 @@ export const Navbar = () => {
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
