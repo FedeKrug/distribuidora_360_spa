@@ -15,7 +15,7 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Categorías', href: '#', current: true },
+  //{ name: 'Categorías', href: '#', current: true },
   { name: 'Inicio', href: '/', current: false },
   { name: 'Tienda', href: '/tienda', current: false },
   { name: 'Sobre Nosotros', href: '/sobre-nosotros', current: false },
@@ -72,9 +72,8 @@ export const Navbar = () => {
                 </div>
               </div>
               <div className="relative z-10 flex items-center lg:hidden">
-                {/* Mobile menu button */}
                 <Disclosure.Button className="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span className="sr-only">Open menu</span>
+                  <span className="sr-only">Abrir Menu</span>
                   {open ? (
                     <IoClose className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -91,7 +90,6 @@ export const Navbar = () => {
                   <FaRegBell className="h-6 w-6" aria-hidden="true" />
                 </button>
 
-                {/* Profile dropdown */}
                 <Menu as="div" className="flex-shrink-0 relative ml-4">
                   <div>
                     <Menu.Button className="bg-white rounded-full flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">

@@ -5,6 +5,7 @@ import { AboutPage } from '../components/pages/AboutPage'
 import { ContactPage } from '../components/pages/ContactPage'
 import { StorePage } from '../components/pages/StorePage'
 import { SeachProductsPage } from '../components/pages/SeachProductsPage'
+import { AdminPage } from '../components/pages/AdminPage'
 
 export const AppRouter = () => {
     return (<>
@@ -15,6 +16,8 @@ export const AppRouter = () => {
             <Route path='/contacto' element={<ContactPage />} />
             <Route path='/tienda' element={<StorePage />} />
             <Route path='/buscar-productos' element={<SeachProductsPage />} />
+            <Route path='/admin' element={<AdminPage />} />
+
 
             <Route path='/*' element={<Error404Page />} />
 

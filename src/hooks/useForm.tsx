@@ -15,6 +15,7 @@ export const useForm = (initialForm: any) => {
 
     const onInputChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = event.target;
+        //console.log({ name, value })
         setFormState({
             ...formState,
             [name]: value
