@@ -1,7 +1,8 @@
 export type AuthType = {
-    username: string;
-    email: string;
-    password: string;
-    id: number | null;
-    status: "authenticated" | "not-authenticated" | "checking-credentials"
+    status: 'checking' | 'not-authenticated' | 'authenticated' | 'registered';
+    uid: string | null;
+    email: string | null;
+    displayName: string | null;
+    photoURL: string | null;
+    errorMessage: string | null;
 }
