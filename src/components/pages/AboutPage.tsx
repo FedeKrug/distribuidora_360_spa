@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const AboutPage = () => {
     return (<>
         <section className="items-center bg-white dark:bg-gray-800 xl:h-screen font-poppins dark:bg-gray-800 ">
@@ -46,7 +44,6 @@ export const AboutPage = () => {
                     </div>
                 </div>
                 <div className='my-[250px]'>
-                    Mapa con markers de clientes o ferreterías que trabajan con distribuidora 360
                 </div>
             </div>
         </section>

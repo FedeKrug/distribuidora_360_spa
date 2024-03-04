@@ -1,4 +1,3 @@
-import React from 'react'
 import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api'
 import { Library } from '@googlemaps/js-api-loader';
 import { mapStyle } from './mapStyles';
@@ -25,6 +24,8 @@ export const ClientsMap = () => {
         libraries
     })
 
+
+    console.log(import.meta.env.VITE_REACT_GOOGLE_MAPS_API)
     if (loadError) return "error Map"
     if (!isLoaded) return "Loading Map"
 

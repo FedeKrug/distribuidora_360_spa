@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
 
 const products = [
   {
     id: 1,
-    name: 'Zip Tote Basket',
+    name: 'A un producto real',
     color: 'White and black',
-    href: '#',
+    href: '/producto',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg',
     imageAlt: 'Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.',
     price: '$140',
@@ -81,7 +82,7 @@ export const ProductsList = () => {
 
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
-            <div key={product.id}>
+            <Link to={product.href} key={product.id} >
               <div className="relative">
                 <div className="relative w-full h-72 rounded-lg overflow-hidden">
                   <img
@@ -110,7 +111,7 @@ export const ProductsList = () => {
                   Add to bag<span className="sr-only">, {product.name}</span>
                 </a>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
