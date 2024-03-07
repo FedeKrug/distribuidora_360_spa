@@ -7,6 +7,9 @@ import { StorePage } from '../components/pages/StorePage'
 import { SeachProductsPage } from '../components/pages/SeachProductsPage'
 import { AdminPage } from '../components/pages/AdminPage'
 import { ProductPage } from '../components/pages/ProductPage'
+import { products } from '../components/ProductsList'
+
+
 
 export const AppRouter = () => {
     return (<>
@@ -16,9 +19,10 @@ export const AppRouter = () => {
             <Route path='/sobre-nosotros' element={<AboutPage />} />
             <Route path='/contacto' element={<ContactPage />} />
             <Route path='/tienda' element={<StorePage />} />
+            {/* <Route path='/categoria/:categoriaId' element={<div>Categorias</div>} /> */}
             <Route path='/buscar-productos' element={<SeachProductsPage />} />
             <Route path='/admin' element={<AdminPage />} />
-            <Route path='/producto' element={<ProductPage />} />
+            <Route path='buscar-productos/producto/:productId' element={<ProductPage productsData={products} />} />
 
 
             <Route path='/*' element={<Error404Page />} />
