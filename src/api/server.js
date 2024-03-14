@@ -3,11 +3,12 @@ const mysql = require("mysql")
 const myconnection = require("express-myconnection");
 const productListsRoutes = require('./productLists/methods');
 const logged_usersRoutes = require("./logged_users/methods");
+const products_tablelist = require("./products_tablelist/methods");
 const cors = require("cors");
-const port = process.env.DEFAULT_PORT;
+
 
 const app = express();
-app.set("port", port || 3000)
+app.set("port", 3000)
 
 const dbOptions = {
     host: "127.0.0.1",
@@ -34,8 +35,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/productLists", productListsRoutes)
 
-app.use("/api/logged", logged_usersRoutes)
+app.use("/api/logged_users", logged_usersRoutes)
 
+app.use("api/products_tablelist", products_tablelist)
 
 //Server running
 app.listen(app.get("port"), () => {

@@ -6,8 +6,8 @@ import { ProductsType } from './ProductsList'
 
 export const Product = ({ id, imageSrc, imageAlt, name, price, category }: ProductsType) => {
     return (
-        <Link to={`producto/${id}`} key={id} >
-            <div className="relative">
+        <Link to={`producto/${id}`} key={id} className="relative">
+            <div>
                 <div className="relative w-full h-72 rounded-lg overflow-hidden">
                     <img
                         src={imageSrc}
@@ -27,13 +27,13 @@ export const Product = ({ id, imageSrc, imageAlt, name, price, category }: Produ
                     <p className="relative text-lg font-semibold text-white">${price}</p>
                 </div>
             </div>
-            <div className="mt-6">
-                <a
+            {/* <div className="mt-6">
+                <button
                     className="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
                 >
                     Agregar al carrito<span className="sr-only">, {name}</span>
-                </a>
-            </div>
+                </button>
+            </div> */}
         </Link>
     )
 }

@@ -40,6 +40,9 @@ export const Navbar = () => {
 
   const { onInputChange, searchBarText } = useForm(initialFormState);
 
+
+
+
   const handleSubmit = (event: any) => {
     console.log("formSubmit");
     event.preventDefault();

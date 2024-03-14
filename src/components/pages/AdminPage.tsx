@@ -1,5 +1,6 @@
 
 export const AdminPage = () => {
+
     return (
         <div className='mx-10'>
             <div className="flex justify-center items-center">
@@ -12,8 +13,10 @@ export const AdminPage = () => {
                         <button className='my-0'>
                             Subir más planillas
                         </button>
+                        {
+                            //mapear un array de mySql con la info de las tablas cargadas de productos.
 
-                        <div>Esta es una planilla de un mayorista</div>
+                        }
                     </div>
                 </div>
             </div>

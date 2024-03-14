@@ -1,9 +1,10 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Transition } from '@headlessui/react'
 import { PlusSmIcon } from '@heroicons/react/solid'
 import { IoClose } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { ProductsList } from './ProductsList';
+import { getAllProducts } from '../api';
 
 const filters = [
   // {
@@ -49,6 +50,11 @@ function classNames(...classes: string[]) {
 
 export const SidebarCategoryFilter = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+
+  useEffect(() => {
+    getAllProducts();
+  }, [])
+
 
   return (
     <div className="bg-white">
