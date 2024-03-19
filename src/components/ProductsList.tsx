@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom"
 import { Product } from "./Product";
-import { getAllProducts } from "../api";
+import { useFetch } from "../hooks/useFetch";
+import { useEffect } from "react";
 
 
 export type ProductsType = {
   id: string;
   name: string;
   color?: string;
-  imageSrc: string;
+  imageSrc?: string;
   imageAlt: string;
   price?: string;
   description?: string;
@@ -94,7 +94,11 @@ export const products: ProductsType[] = [
 
 export const ProductsList = () => {
 
-
+  const { data, getData } = useFetch("productLists");
+  useEffect(() => {
+    getData();
+    console.log({ data })
+  }, [])
   return (
     <div className="bg-white container">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

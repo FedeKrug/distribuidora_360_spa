@@ -31,7 +31,7 @@ export const ClientsMap = () => {
 
     return (
         <>
-            <div className="2xl:mx-auto 2xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
+            <div className="2xl:mx-auto 2xl:container container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
                 <div className="flex flex-col jusitfy-center items-center space-y-10">
                     <div className="flex flex-col justify-center items-center ">
                         <h1 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-gray-800 dark:text-white">Nuestros Clientes</h1>

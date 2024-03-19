@@ -64,16 +64,19 @@ export const Navbar = () => {
             <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
               <div className="relative h-16 flex justify-between">
                 <div className="relative z-10 px-2 flex lg:px-0">
-                  <div className=" flex items-center ">
-                    <Link to="/">
+                  <div className="py-2 flex items-center">
+                    <Link to="/" className='flex items-center'>
                       <img
-                        className=" h-14 w-auto"
-                        src="../../public/LogoDist.svg"
-                        alt="Workflow"
+                        className=" h-10 lg:h-12 w-auto"
+                        src="../../public/LogoDist_engranaje.png"
+                        alt="Logo"
                       />
-                      {/* <h2>
-                      Distribuidora 360
-                    </h2> */}
+                      <img
+                        className="hidden lg:block lg:ml-6 h-10 lg:h-12 w-auto"
+                        src="../../public/texto_negro.png"
+                        alt="Logo"
+                      />
+
                     </Link>
                   </div>
                 </div>
