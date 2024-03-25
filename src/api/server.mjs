@@ -1,11 +1,16 @@
-const express = require('express')
-const mysql = require("mysql")
-const myconnection = require("express-myconnection");
+//const express = require('express')
+// const mysql = require("mysql")
+// const myconnection = require("express-myconnection");
 const productListsRoutes = require('./productLists/methods');
 const logged_usersRoutes = require("./logged_users/methods");
 const products_tablelist = require("./products_tablelist/methods");
 const cors = require("cors");
 
+import express, { myconnection } from "express";
+import mysql from "mysql";
+import cors from "cors";
+import productListsRoutes from "./productLists/methods";
+import logged_usersRoutes from "./logged_users/methods";
 
 const app = express();
 app.set("port", 3000)
