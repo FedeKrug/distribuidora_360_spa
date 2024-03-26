@@ -1,9 +1,9 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3000/api/productLists/";
+const baseUrl = "http://localhost:3000/api/proveedores/";
 
 axios.defaults.baseURL = baseUrl;
 
-export const getAllProductLists = async () => {
+export const getAllProveedores = async () => {
     try {
         const response = await axios.get("/");
         if (response.status === 200) {
@@ -20,7 +20,7 @@ export const getAllProductLists = async () => {
 
 }
 
-export const getProductList = async (id: number) => {
+export const getProveedor = async (id: number) => {
     try {
         const response = await axios.get(`/${id}`);
         if (response.status === 200) {
@@ -34,7 +34,7 @@ export const getProductList = async (id: number) => {
     }
 }
 
-export const createNewProductList = async (body: any) => {
+export const createNewProveedor = async (body: any) => {
     const data = {
         title: body.title,
         file: body.file,
@@ -53,7 +53,7 @@ export const createNewProductList = async (body: any) => {
     }
 }
 
-export const updateProductList = async (id: number) => {
+export const updateProveedor = async (id: number) => {
     try {
         const response = await axios.post(`/${id}`);
         if (response.status === 200) {
@@ -68,7 +68,7 @@ export const updateProductList = async (id: number) => {
 
 }
 
-export const deleteProductList = async (id: number) => {
+export const deleteProveedor = async (id: number) => {
     try {
         const response = await axios.delete(`/${id}`);
         if (response.status === 200) {

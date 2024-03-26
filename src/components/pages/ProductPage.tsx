@@ -1,18 +1,26 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
+import { useFetch } from '../../hooks/useFetch';
+import { ConvertIdToCategory } from '../../utils/idToCategory';
 
 
 const maxCant = 25;
 
 
 
-export const ProductPage = ({ productsData }: any) => {
+export const ProductPage = () => {
     const [productCant, SetproductCant] = useState<number>(0);
 
+    const { data, getData } = useFetch("productos");
+    useEffect(() => {
+        getData();
+    }, [])
     const { productId } = useParams();
-    // console.log({ productsData })
-    const product = productsData.find((producto: any) => producto.id === productId);
 
+    const producto = data[parseInt(productId)];
+
+    const productCategory = producto?.idCategory;
+    const categoria = ConvertIdToCategory(productCategory);
     const handleAdd = () => {
         SetproductCant(c => c + 1 >= maxCant ? maxCant : c + 1);
     }
@@ -25,16 +33,22 @@ export const ProductPage = ({ productsData }: any) => {
             <div className='lg:flex justify-between'>
                 <img
                     className='h-[300px] lg:h-[450px] rounded-[10px] lg:rounded-[25px] w-full lg:w-2/5'
-                    src="../../public/images/bottom_bg_2.png"
-                    alt="Product Img"
+                    src={producto?.imageSrc}
+                    alt={producto?.nombreProducto}
 
                 />
 
                 <div className=' flex-1 text-start lg:pl-10 block '>
 
                     <div className='my-5 lg:m-0'>
-                        <h2 className='text-[25px] lg:text-[35px]'>{product?.name}</h2>
-                        <span className='block font-semibold text-[25px] '>${product?.price}</span>
+                        <h2 className='text-[25px] lg:text-[35px]'>{producto?.nombreProducto}</h2>
+                        {
+                            (producto?.precioVenta != "" && producto?.precioVenta != null)
+                                ?
+                                <span className='block font-semibold text-[25px] '>${producto?.precioVenta}</span>
+                                :
+                                null
+                        }
                         <span className='text-[18px] lg:text-[20px]'>Acerca de:</span>
                         <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus officia est cum suscipit, reiciendis, repellendus veritatis maiores, ipsam ducimus excepturi voluptatum. Suscipit impedit enim atque, aspernatur nostrum ut rem.</p>
                     </div>
@@ -47,7 +61,7 @@ export const ProductPage = ({ productsData }: any) => {
                             <span className='text-[18px]'>
                                 Categoría
                             </span>
-                            <div className='text-[20px] text-black font-bold  lg:text-[16px] bg-blue-200 border-green-800 border-[4px] p-2 rounded-[14px] mt-2'>{product.category}</div>
+                            <div className='text-[20px] text-black font-bold  lg:text-[16px] bg-blue-200 border-green-800 border-[4px] p-2 rounded-[14px] mt-2'>{categoria}</div>
                         </div>
 
 
@@ -73,12 +87,18 @@ export const ProductPage = ({ productsData }: any) => {
                         }
                     </div>
                     <div className=' flex flex-col lg:block'>
-                        <button className='my-5 lg:mr-4 lg:my-0'>
-                            Consultar Presupuesto
-                        </button>
-                        <button>
-                            Agregar al carrito
-                        </button>
+                        {
+                            (producto?.precioVenta == "" || producto?.precioVenta == null) ?
+                                //TODO: Darle al boton de consultar, un modal para contactarse, o un mensaje directo al whatsapp de la ferreteria
+                                <button className='my-5 lg:mr-4 lg:my-0'>
+                                    Consultar Presupuesto
+                                </button>
+                                :
+
+                                <button>
+                                    Agregar al carrito
+                                </button>
+                        }
                     </div>
 
                 </div>

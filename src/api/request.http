@@ -1,27 +1,51 @@
 ### /*GET*/
-GET http://localhost:3000/api/localhost:3000/api/productLists HTTP/1.1
+GET http://localhost:3000/api/productos HTTP/1.1
+
+
+
+### /*GET*/
+GET http://localhost:3000/api/proveedores HTTP/1.1
+
+### /*GET*/
+GET http://localhost:3000/api/categorias HTTP/1.1
+
 
 ### /*POST*/
-POST http://localhost:3000/api/localhost:3000/api/products_tablelist HTTP/1.1
+POST http://localhost:3000/api/productos HTTP/1.1
 Content-Type: application/json
 
 {
-   
-"proveedor":"DA",
-"codigoMayorista":"FES-81039",
-"productName":"ELECTRODOS PARA SOLDADURA",
-"marcaProducto":"05",
-"productCategory":"FERRETERIA"
-      
+    "id":"4",
+      "codigoMayorista":"57",
+"nombreProducto":"ADAPTADOR MACHO FINO A ROSCA GRUESA",
+"marcaProducto":"Importado",
+"idCategory":"1",
+"idProveedor":"DA",
+"imageSrc":"../../public/images/causes.jpg"
+
     }
 
+
 ### /*DELETE*/
-DELETE http://localhost:3000/api/1 HTTP/1.1
+DELETE http://localhost:3000/api/productos/0 HTTP/1.1
 
 ### /*UPDATE*/
-POST http://localhost:3000/api/3 HTTP/1.1
+POST http://localhost:3000/api/productos/0 HTTP/1.1
 Content-Type: application/json
 
 {
- 
+ "imageSrc":"https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
+ "precioVenta":"18000"
+
 }
+
+###/*POST Categorias*/
+POST http://localhost:3000/api/productos HTTP/1.1
+Content-Type: application/json
+
+{
+    
+     "id":"5",
+     "nombreCategoria":"TODOS"
+
+    }

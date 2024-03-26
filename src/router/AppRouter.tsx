@@ -7,11 +7,12 @@ import { StorePage } from '../components/pages/StorePage'
 import { SeachProductsPage } from '../components/pages/SeachProductsPage'
 import { AdminPage } from '../components/pages/AdminPage'
 import { ProductPage } from '../components/pages/ProductPage'
-import { products } from '../components/ProductsList'
 
 
 
 export const AppRouter = () => {
+
+
     return (<>
 
         <Routes>
@@ -22,7 +23,7 @@ export const AppRouter = () => {
             {/* <Route path='/categoria/:categoriaId' element={<div>Categorias</div>} /> */}
             <Route path='/buscar-productos' element={<SeachProductsPage />} />
             <Route path='/admin' element={<AdminPage />} />
-            <Route path='buscar-productos/producto/:productId' element={<ProductPage productsData={products} />} />
+            <Route path='buscar-productos/producto/:productId' element={<ProductPage />} />
 
 
             <Route path='/*' element={<Error404Page />} />

@@ -1,19 +1,12 @@
-//const express = require('express')
-// const mysql = require("mysql")
-// const myconnection = require("express-myconnection");
-// const productListsRoutes = require('./productLists/methods');
-// const logged_usersRoutes = require("./logged_users/methods");
-// const products_tablelist = require("./products_tablelist/methods");
-// const cors = require("cors");
-
 import express from "express";
 import myconnection from "express-myconnection";
 import mysql from "mysql";
 import cors from "cors";
 import productListsRoutes from "./productLists/methods.js";
-import logged_usersRoutes from "./logged_users/methods.js";
-import products_tablelist from "./products_tablelist/methods.js";
-
+// import logged_usersRoutes from "./logged_users/methods.js";
+import products_tablelist from "./productos/methods.js";
+import proveedores from "./proveedores/methods.js"
+import categorias from "./categorias/methods.js"
 
 
 const app = express();
@@ -44,9 +37,13 @@ app.get("/", (req, res) => {
 
 app.use("/api/productLists", productListsRoutes)
 
-app.use("/api/logged_users", logged_usersRoutes)
+app.use("/api/proveedores", proveedores)
 
-app.use("api/products_tablelist", products_tablelist)
+// app.use("/api/logged_users", logged_usersRoutes)
+
+app.use("/api/productos", products_tablelist)
+
+app.use("/api/categorias", categorias)
 
 //Server running
 app.listen(app.get("port"), () => {

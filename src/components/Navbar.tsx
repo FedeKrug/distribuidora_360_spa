@@ -1,7 +1,6 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { FaSearch } from "react-icons/fa";
-import { FaRegBell } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { Link } from 'react-router-dom';
