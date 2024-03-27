@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useFetch } from "../../hooks/useFetch"
-import { AdminProductTableCard } from "../AdminProductTableCard";
+import { AdminProductTableCard, ProductTableCardType } from "../AdminProductTableCard";
 
 export const AdminPage = () => {
 
@@ -24,7 +24,7 @@ export const AdminPage = () => {
 
                         <div className="flex flex-wrap">
                             {
-                                data.map((planilla, index) => (
+                                data.map((planilla:ProductTableCardType, index) => (
                                     <AdminProductTableCard key={index} {...planilla} />
                                 ))
                             }

@@ -1,5 +1,5 @@
 
-type ProductTableCardType = {
+export type ProductTableCardType = {
     title: string;
     photoUrl: string;
 }
