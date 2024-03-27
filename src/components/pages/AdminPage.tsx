@@ -1,5 +1,13 @@
+import { useEffect } from "react";
+import { useFetch } from "../../hooks/useFetch"
+import { AdminProductTableCard } from "../AdminProductTableCard";
 
 export const AdminPage = () => {
+
+    const { data, getData } = useFetch("productLists");
+    useEffect(() => {
+        getData();
+    }, []);
 
     return (
         <div className='mx-10'>
@@ -13,10 +21,15 @@ export const AdminPage = () => {
                         <button className='my-0'>
                             Subir más planillas
                         </button>
-                        {
-                            //mapear un array de mySql con la info de las tablas cargadas de productos.
 
-                        }
+                        <div className="flex flex-wrap">
+                            {
+                                data.map((planilla, index) => (
+                                    <AdminProductTableCard key={index} {...planilla} />
+                                ))
+                            }
+                        </div>
+
                     </div>
                 </div>
             </div>

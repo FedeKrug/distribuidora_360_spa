@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 const sliderItems = [
     {
-        imgUrl: "../images/causes.jpg",
+        imgUrl: "../images/800x526.jpg",
         active: false,
     },
     {
@@ -11,7 +11,7 @@ const sliderItems = [
         active: true,
     },
     {
-        imgUrl: "../images/cause_details.jpg",
+        imgUrl: "../images/1600x900.jpg",
         active: false,
     },
 
