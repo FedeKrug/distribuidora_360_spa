@@ -3,15 +3,15 @@ import { useState } from 'react'
 
 const sliderItems = [
     {
-        imgUrl: "../../public/images/causes.jpg",
+        imgUrl: "../images/causes.jpg",
         active: false,
     },
     {
-        imgUrl: "../../public/images/bottom_bg_2.png",
+        imgUrl: "../images/bottom_bg_2.png",
         active: true,
     },
     {
-        imgUrl: "../../public/images/cause_details.jpg",
+        imgUrl: "../images/cause_details.jpg",
         active: false,
     },
 

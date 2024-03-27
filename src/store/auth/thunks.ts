@@ -1,6 +1,9 @@
 import { LoginWithEmailAndPassword, SignInWithGoogle, registerWithEmailAndPassword } from "../../config/Providers";
 import { setItem } from "../../hooks/localStorage";
-import { checkingCredentials, login, logout, signUp } from "./actions";
+import {
+    checkingCredentials, login, logout,
+    //    signUp
+} from "./actions";
 
 
 
@@ -27,10 +30,11 @@ export const startRegisterWithEmailAndPassword = (email: string, password: strin
         dispatch(checkingCredentials());
         const result = await registerWithEmailAndPassword(email, password);
         const resp = { ...result, displayName }
+        console.log(resp);
         if (!result.ok) return dispatch(logout(result.errorMessage));
 
         // setItem('auth', resp);
-        dispatch(signUp(resp));
+        // dispatch(signUp(resp));
         console.log({ result })
 
     }
@@ -42,7 +46,7 @@ export const startLoginWithEmailAndPassword = (email: string, password: string) 
         const result = await LoginWithEmailAndPassword(email, password);
         if (!result.ok) return dispatch(logout(result.errorMessage));
         setItem('auth', result);
-        dispatch(login(result));
+        // dispatch(login(result));
 
     }
 }

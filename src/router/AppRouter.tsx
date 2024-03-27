@@ -26,6 +26,7 @@ export const AppRouter = () => {
             <Route path='buscar-productos/producto/:productId' element={<ProductPage />} />
 
 
+            <Route path='/404' element={<Error404Page />} />
             <Route path='/*' element={<Error404Page />} />
 
         </Routes>

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 
 export const Error404Page = () => {
@@ -12,7 +12,7 @@ export const Error404Page = () => {
 
                     <div className='flex flex-col'>
                         <img
-                            src="../../../public/images/error404_img.webp"
+                            src="../images/error404_img.webp"
                             alt="Error 404"
                             width={150}
                             height={150}
@@ -26,14 +26,14 @@ export const Error404Page = () => {
 
                 </div>
             </div>
-            <div className="w-max mt-4 mb-8 bg-yellow-400 flex self-center p-[1rem] rounded-2xl ">
-                <Link
-                    to='/'
-                    className="text-[18px] font-bold"
-                >
+            <Link
+                to='/'
+                className="text-[18px] font-bold self-center"
+            >
+                <div className="w-max mt-4 mb-8 bg-yellow-400 flex  p-[1rem] rounded-2xl ">
                     Volver al inicio
-                </Link>
-            </div>
+                </div>
+            </Link>
         </div>
     </>
     )

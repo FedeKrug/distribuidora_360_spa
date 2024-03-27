@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import { useFetch } from '../../hooks/useFetch';
 import { ConvertIdToCategory } from '../../utils/idToCategory';
+import { ProductsType } from '../ProductsList';
 
 
 const maxCant = 25;
@@ -17,10 +18,10 @@ export const ProductPage = () => {
     }, [])
     const { productId } = useParams();
 
-    const producto = data[parseInt(productId)];
+    const producto: ProductsType = data[parseInt(productId!)];
 
     const productCategory = producto?.idCategory;
-    const categoria = ConvertIdToCategory(productCategory);
+    const categoria = ConvertIdToCategory(productCategory!);
     const handleAdd = () => {
         SetproductCant(c => c + 1 >= maxCant ? maxCant : c + 1);
     }

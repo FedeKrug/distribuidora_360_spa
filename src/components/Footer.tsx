@@ -7,8 +7,8 @@ export const Footer = () => {
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
-                            <img src="../../public/LogoDist_engranaje.png" className="h-12 me-3" alt="Logo" />
-                            <img src="../../public/LogoDist_texto.png" className="h-12 me-3" alt="Logo" />
+                            <img src="../images/logoDist_engranaje.png" className="h-12 me-3" alt="Logo" />
+                            <img src="../images/logoDist_texto.png" className="h-12 me-3" alt="Logo" />
                             {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Distribuidora 360</span> */}
                         </Link>
                     </div>

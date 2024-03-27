@@ -10,8 +10,8 @@ export type ProductsType = {
   imageSrc?: string;
   precioVenta?: string;
   description?: string;
-  category: "Ferretería" | "Jardinería" | "Electricidad" | "Sanitarios" | "Ofertas" | "Todos";
-
+  category?: "Ferretería" | "Jardinería" | "Electricidad" | "Sanitarios" | "Ofertas" | "Todos";
+  idCategory?: number;
 
   //TODO: Definir las subcategorias con los chicos...
   subCategory?: string;

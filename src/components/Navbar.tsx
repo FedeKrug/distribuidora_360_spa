@@ -3,7 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 
 
@@ -39,20 +39,14 @@ export const Navbar = () => {
 
   const { onInputChange, searchBarText } = useForm(initialFormState);
 
-
+  const navigate = useNavigate();
 
 
   const handleSubmit = (event: any) => {
     console.log("formSubmit");
     event.preventDefault();
-    window.location.href = "/buscar-productos";
+    navigate("/buscar-productos");
   }
-
-  // useEffect(() => {
-  //   if (redirect) {
-  //     return redirectDocument("/login");
-  //   }
-  // }, [redirect])
 
 
   return (
@@ -67,12 +61,12 @@ export const Navbar = () => {
                     <Link to="/" className='flex items-center'>
                       <img
                         className=" h-10 lg:h-12 w-auto"
-                        src="../../public/LogoDist_engranaje.png"
+                        src="../images/logoDist_engranaje.png"
                         alt="Logo"
                       />
                       <img
                         className="hidden lg:block lg:ml-6 h-10 lg:h-12 w-auto"
-                        src="../../public/texto_negro.png"
+                        src="../images/texto_negro.png"
                         alt="Logo"
                       />
 
