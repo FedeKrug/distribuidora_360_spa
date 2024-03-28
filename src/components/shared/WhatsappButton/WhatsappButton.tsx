@@ -11,7 +11,7 @@ export const WhatsappButton = () => {
                 rel="stylesheet"
                 href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
             />
-            <a href={link} className="float" target="_blank">
+            <a href={link} className="float" target="_blank" style={{zIndex:9999}}>
                 <i className="fa fa-whatsapp my-float"></i>
             </a>
         </>
