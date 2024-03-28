@@ -8,13 +8,8 @@ import { SeachProductsPage } from '../components/pages/SeachProductsPage'
 import { AdminPage } from '../components/pages/AdminPage'
 import { ProductPage } from '../components/pages/ProductPage'
 
-
-
 export const AppRouter = () => {
-
-
-    return (<>
-
+    return (
         <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/sobre-nosotros' element={<AboutPage />} />
@@ -24,14 +19,9 @@ export const AppRouter = () => {
             <Route path='/buscar-productos' element={<SeachProductsPage />} />
             <Route path='/admin' element={<AdminPage />} />
             <Route path='buscar-productos/producto/:productId' element={<ProductPage />} />
-
-
             <Route path='/404' element={<Error404Page />} />
             <Route path='/*' element={<Error404Page />} />
-
         </Routes>
-    </>
-
     )
 }
 
